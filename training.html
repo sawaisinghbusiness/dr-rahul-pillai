@@ -1,0 +1,1598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Aesthetic Training Programs | Dr. [Name]</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --gold-dark: #A07C45;
+    --white: #FFFFFF;
+    --off-white: #FAF8F4;
+    --cream: #F5F0E8;
+    --text-dark: #1A1612;
+    --text-mid: #4A4238;
+    --text-light: #8A7E72;
+    --border: rgba(201,169,110,0.25);
+    --shadow: 0 4px 30px rgba(160,124,69,0.12);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─────────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-dark); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--white) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold-dark) !important; }
+
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); transition: 0.3s; }
+
+  /* ─── HERO BANNER ─────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to right, rgba(20,16,10,0.88) 40%, rgba(20,16,10,0.4) 100%),
+      url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(201,169,110,0.18) 0%, transparent 65%);
+  }
+
+  /* decorative lines */
+  .hero-deco {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0.3;
+  }
+
+  .hero-deco span {
+    display: block;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.12;
+    max-width: 640px;
+    margin-bottom: 1.6rem;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    max-width: 500px;
+    margin-bottom: 2.8rem;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.9rem 2.4rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 0.9rem 2.4rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+    z-index: 2;
+    display: flex;
+    gap: 3rem;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+  }
+
+  /* ─── SHARED SECTION STYLES ───────────────────── */
+  section { padding: 7rem 2rem; }
+
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-tag::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold-dark); }
+
+  .section-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    max-width: 560px;
+    line-height: 1.9;
+  }
+
+  /* ─── INTRO SECTION ───────────────────────────── */
+  .intro { background: var(--white); }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .intro-img-wrap {
+    position: relative;
+  }
+
+  .intro-img-wrap img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .intro-img-wrap::before {
+    content: '';
+    position: absolute;
+    top: -20px; left: -20px;
+    right: 20px; bottom: 20px;
+    border: 1px solid var(--border);
+    z-index: 0;
+  }
+
+  .intro-img-wrap img { position: relative; z-index: 1; }
+
+  .intro-badge {
+    position: absolute;
+    bottom: -16px; right: -16px;
+    z-index: 2;
+    background: var(--gold);
+    color: var(--white);
+    padding: 1.2rem 1.8rem;
+    text-align: center;
+  }
+
+  .intro-badge strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .intro-badge span {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  .intro-list {
+    list-style: none;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .intro-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  .intro-list li i {
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ─── COURSES ─────────────────────────────────── */
+  .courses { background: var(--cream); }
+
+  .courses-header { text-align: center; margin-bottom: 4rem; }
+
+  .courses-header .section-body { max-width: 500px; margin: 0 auto; }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
+
+  .course-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .course-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--gold);
+    transition: height 0.4s;
+  }
+
+  .course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .course-card:hover::before { height: 100%; }
+
+  .course-card.featured {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, #fff 60%, #fdf8ef);
+  }
+
+  .course-card.featured::before { height: 100%; }
+
+  .course-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .course-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .course-duration {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .course-duration i { color: var(--gold); }
+
+  .course-learn {
+    list-style: none;
+    margin-bottom: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .course-learn li {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    font-weight: 300;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .course-learn li::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+
+  .course-who {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .course-who strong { color: var(--text-mid); }
+
+  /* ─── WHAT YOU LEARN ─────────────────────────── */
+  .learn-section { background: var(--white); }
+
+  .learn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .learn-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .learn-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 1.2rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+
+  .learn-item:hover { background: #fdf5e6; }
+
+  .learn-icon {
+    width: 38px; height: 38px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+    font-size: 0.9rem;
+  }
+
+  .learn-item-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+  }
+
+  .learn-item-text span {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  /* ─── GALLERY ────────────────────────────────── */
+  .gallery { background: var(--cream); }
+
+  .gallery-header { text-align: center; margin-bottom: 3.5rem; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 240px 240px;
+    gap: 12px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.92);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+  }
+
+  .gallery-item:first-child { grid-row: 1 / 3; }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20,16,10,0.5), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.2rem;
+  }
+
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  .gallery-overlay span {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  /* ─── WHY TRAIN ──────────────────────────────── */
+  .why { background: var(--text-dark); }
+
+  .why-header { text-align: center; margin-bottom: 4rem; }
+
+  .why-header .section-tag { color: var(--gold-light); }
+  .why-header .section-tag::before { background: var(--gold-light); }
+
+  .why-header .section-title { color: var(--white); }
+
+  .why-header .section-body { color: rgba(255,255,255,0.55); margin: 0 auto; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,169,110,0.15);
+    border: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .why-card {
+    background: var(--text-dark);
+    padding: 2.8rem 2.2rem;
+    text-align: center;
+    transition: background 0.3s;
+    position: relative;
+  }
+
+  .why-card:hover { background: rgba(201,169,110,0.08); }
+
+  .why-icon {
+    width: 56px; height: 56px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.4rem;
+    color: var(--gold);
+    font-size: 1.2rem;
+    transition: background 0.3s;
+  }
+
+  .why-card:hover .why-icon { background: var(--gold); color: var(--white); }
+
+  .why-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.7rem;
+  }
+
+  .why-card p {
+    font-size: 0.87rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+  }
+
+  /* ─── WHO CAN JOIN ───────────────────────────── */
+  .who { background: var(--white); }
+
+  .who-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .who-right img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+  }
+
+  .who-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .who-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 1.6rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .who-item:hover { transform: translateX(6px); background: #fdf5e4; }
+
+  .who-item i {
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .who-item span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-dark);
+  }
+
+  /* ─── CERTIFICATION ──────────────────────────── */
+  .cert { background: var(--cream); }
+
+  .cert-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .cert-text .section-body { margin-bottom: 2rem; }
+
+  .cert-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .cert-points li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  .cert-points li i { color: var(--gold); font-size: 0.85rem; }
+
+  .cert-img-wrap {
+    position: relative;
+  }
+
+  .cert-img-wrap img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border: 8px solid var(--white);
+    box-shadow: 0 8px 40px rgba(160,124,69,0.2);
+  }
+
+  .cert-ribbon {
+    position: absolute;
+    top: -16px; right: 20px;
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── FORM ───────────────────────────────────── */
+  .application { background: var(--white); }
+
+  .form-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .form-wrap .section-title { margin-bottom: 0.8rem; }
+  .form-wrap .section-body { margin: 0 auto 3rem; }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    text-align: left;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1px solid #e0d8ce;
+    background: var(--off-white);
+    padding: 0.85rem 1.1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); background: var(--white); }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit { margin-top: 2rem; text-align: center; }
+
+  .form-submit button {
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    padding: 1rem 3.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .form-submit button:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+  /* ─── CTA BANNER ─────────────────────────────── */
+  .cta-banner {
+    position: relative;
+    padding: 7rem 2rem;
+    background:
+      linear-gradient(rgba(20,16,10,0.82), rgba(20,16,10,0.82)),
+      url('https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=1400&q=80') center/cover no-repeat;
+    text-align: center;
+  }
+
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(201,169,110,0.25);
+    pointer-events: none;
+  }
+
+  .cta-banner .section-tag { justify-content: center; color: var(--gold-light); }
+  .cta-banner .section-tag::before { background: var(--gold-light); }
+
+  .cta-banner .section-title { color: var(--white); text-align: center; }
+
+  .cta-banner p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 2.8rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: var(--white);
+    padding: 0.9rem 2.2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s;
+  }
+
+  .btn-whatsapp:hover { opacity: 0.88; }
+
+  .btn-call {
+    background: transparent;
+    color: var(--white);
+    padding: 0.9rem 2.2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .btn-call:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ─── FOOTER ─────────────────────────────────── */
+  footer {
+    background: #0E0B08;
+    padding: 4rem 2rem 2rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.9;
+    margin-top: 1rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-brand .nav-logo { display: block; margin-bottom: 0.5rem; color: var(--white); }
+
+  .footer-col h4 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .footer-col a {
+    font-size: 0.87rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  }
+
+  .footer-socials { display: flex; gap: 1rem; }
+
+  .footer-socials a {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .footer-socials a:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ─── ANIMATIONS ─────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ─── MOBILE ──────────────────────────────────── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .hero h1 { font-size: 2.6rem; }
+    .hero-stats { display: none; }
+
+    .intro-grid,
+    .learn-grid,
+    .who-inner,
+    .cert-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    .intro-img-wrap::before { display: none; }
+    .intro-img-wrap img { height: 320px; }
+
+    .courses-grid { grid-template-columns: 1fr; }
+
+    .why-grid { grid-template-columns: 1fr; }
+
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .gallery-item:first-child { grid-row: auto; }
+
+    .form-grid { grid-template-columns: 1fr; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4.5rem 1.2rem; }
+    .hero-content { padding: 4rem 1.2rem; }
+    .hero-actions { flex-direction: column; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .learn-items { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Dr. <span>Aesthetics</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="treatments.html">Treatments</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="training.html" class="active">Training</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco">
+    <span style="width:80px"></span>
+    <span style="width:50px"></span>
+    <span style="width:110px"></span>
+    <span style="width:40px"></span>
+    <span style="width:90px"></span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">International Aesthetic Training</div>
+    <h1>Professional Training Programs <em>for Doctors</em></h1>
+    <p class="hero-sub">Hands-on training in advanced laser, botox, fillers, PRP and aesthetic procedures by an internationally certified trainer.</p>
+    <div class="hero-actions">
+      <a href="#application" class="btn-gold"><i class="fas fa-graduation-cap"></i> Apply for Training</a>
+      <a href="#courses" class="btn-outline"><i class="fas fa-book-open"></i> View Courses</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Doctors Trained</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Courses</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTRO ─── -->
+<section class="intro reveal">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-img-wrap">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80" alt="Aesthetic Training">
+        <div class="intro-badge">
+          <strong>ISO</strong>
+          <span>Certified Programs</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">About The Program</div>
+        <h2 class="section-title">International Aesthetic &amp; <em>Laser Training</em> Programs</h2>
+        <p class="section-body">Our training programs are designed for medical professionals who want to expand their expertise in advanced aesthetic medicine. Each course combines rigorous theory with intensive hands-on practice under expert supervision.</p>
+        <ul class="intro-list">
+          <li><i class="fas fa-check-circle"></i> Comprehensive training for dermatologists and medical doctors seeking to master advanced aesthetic techniques.</li>
+          <li><i class="fas fa-check-circle"></i> Hands-on practical sessions with live patients under direct supervision of an international trainer.</li>
+          <li><i class="fas fa-check-circle"></i> Evidence-based international protocols aligned with global aesthetic medicine standards.</li>
+          <li><i class="fas fa-check-circle"></i> Small batch sizes ensuring personalised attention and maximum skill transfer.</li>
+          <li><i class="fas fa-check-circle"></i> International certification provided upon successful course completion.</li>
+          <li><i class="fas fa-check-circle"></i> Ongoing post-training mentorship and clinical support.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COURSES ─── -->
+<section class="courses reveal" id="courses">
+  <div class="container">
+    <div class="courses-header">
+      <div class="section-tag">Training Programs</div>
+      <h2 class="section-title">Our <em>Training Courses</em></h2>
+      <p class="section-body">Choose from a range of structured programs designed for different levels of expertise and specialisation goals.</p>
+    </div>
+    <div class="courses-grid">
+
+      <div class="course-card">
+        <span class="course-tag">Laser Medicine</span>
+        <div class="course-name">Laser Training</div>
+        <div class="course-duration"><i class="far fa-clock"></i> 3 Days Intensive</div>
+        <ul class="course-learn">
+          <li>Laser physics &amp; safety protocols</li>
+          <li>Hair removal &amp; skin rejuvenation</li>
+          <li>Pigmentation &amp; vascular treatment</li>
+          <li>Fractional laser resurfacing</li>
+        </ul>
+        <p class="course-who"><strong>Who can join:</strong> MBBS, Dermatologists, Plastic Surgeons</p>
+        <a href="#application" class="btn-gold" style="font-size:0.75rem;padding:0.65rem 1.4rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-tag">Injectables</span>
+        <div class="course-name">Botox Training</div>
+        <div class="course-duration"><i class="far fa-clock"></i> 2 Days Intensive</div>
+        <ul class="course-learn">
+          <li>Facial anatomy for injectors</li>
+          <li>Dosing &amp; dilution techniques</li>
+          <li>Glabellar, forehead, crow's feet</li>
+          <li>Complication management</li>
+        </ul>
+        <p class="course-who"><strong>Who can join:</strong> Dermatologists, Aesthetic Physicians</p>
+        <a href="#application" class="btn-gold" style="font-size:0.75rem;padding:0.65rem 1.4rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-tag">Injectables</span>
+        <div class="course-name">Fillers Training</div>
+        <div class="course-duration"><i class="far fa-clock"></i> 2 Days Intensive</div>
+        <ul class="course-learn">
+          <li>Hyaluronic acid filler science</li>
+          <li>Lip, cheek &amp; tear trough techniques</li>
+          <li>Nose &amp; jawline contouring</li>
+          <li>Vascular occlusion management</li>
+        </ul>
+        <p class="course-who"><strong>Who can join:</strong> Doctors, Dermatologists, Dental Surgeons</p>
+        <a href="#application" class="btn-gold" style="font-size:0.75rem;padding:0.65rem 1.4rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-tag">Regenerative</span>
+        <div class="course-name">PRP &amp; GFC Training</div>
+        <div class="course-duration"><i class="far fa-clock"></i> 2 Days Intensive</div>
+        <ul class="course-learn">
+          <li>PRP preparation &amp; centrifuge protocols</li>
+          <li>Scalp &amp; hair loss treatment</li>
+          <li>GFC preparation technique</li>
+          <li>Skin rejuvenation applications</li>
+        </ul>
+        <p class="course-who"><strong>Who can join:</strong> MBBS Doctors, Dermatologists</p>
+        <a href="#application" class="btn-gold" style="font-size:0.75rem;padding:0.65rem 1.4rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-tag">Skin Therapy</span>
+        <div class="course-name">Mesotherapy Training</div>
+        <div class="course-duration"><i class="far fa-clock"></i> 2 Days Intensive</div>
+        <ul class="course-learn">
+          <li>Mesotherapy cocktail formulations</li>
+          <li>Microinjection techniques</li>
+          <li>Skin brightening &amp; hydration</li>
+          <li>Hair mesotherapy protocols</li>
+        </ul>
+        <p class="course-who"><strong>Who can join:</strong> Doctors, Aesthetic Physicians</p>
+        <a href="#application" class="btn-gold" style="font-size:0.75rem;padding:0.65rem 1.4rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-tag">Comprehensive</span>
+        <div class="course-name">Advanced Aesthetic Course</div>
+        <div class="course-duration"><i class="far fa-clock"></i> 1 Week Program</div>
+        <ul class="course-learn">
+          <li>All injectable modalities combined</li>
+          <li>Laser &amp; energy-based devices</li>
+          <li>Patient consultation &amp; selection</li>
+          <li>Practice setup &amp; business guidance</li>
+        </ul>
+        <p class="course-who"><strong>Who can join:</strong> All Medical Professionals</p>
+        <a href="#application" class="btn-gold" style="font-size:0.75rem;padding:0.65rem 1.4rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="course-card featured" style="grid-column: 1 / -1; display:grid; grid-template-columns:1fr auto; align-items:center; gap:2rem;">
+        <div>
+          <span class="course-tag">⭐ Flagship Program</span>
+          <div class="course-name" style="font-size:1.9rem;">Fellowship in Aesthetic Medicine</div>
+          <div class="course-duration"><i class="far fa-clock"></i> 1 Month Immersive Fellowship</div>
+          <ul class="course-learn" style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;">
+            <li>Complete aesthetic medicine curriculum</li>
+            <li>200+ live patient cases</li>
+            <li>Advanced laser &amp; device training</li>
+            <li>Business &amp; practice management</li>
+            <li>Research &amp; case documentation</li>
+            <li>International certification included</li>
+          </ul>
+          <p class="course-who"><strong>Who can join:</strong> Doctors with basic aesthetics knowledge seeking expert-level mastery</p>
+        </div>
+        <div style="text-align:center;padding:1rem;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--gold-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Most Popular</div>
+          <a href="#application" class="btn-gold" style="display:inline-flex;">Apply for Fellowship <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT YOU LEARN ─── -->
+<section class="learn-section reveal">
+  <div class="container">
+    <div class="learn-grid">
+      <div>
+        <div class="section-tag">Curriculum</div>
+        <h2 class="section-title">What You Will <em>Learn</em></h2>
+        <p class="section-body">Our curriculum covers the complete spectrum of modern aesthetic medicine, giving you the confidence and competence to build a thriving aesthetic practice.</p>
+        <div class="learn-items" style="margin-top:2.5rem;">
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-bolt"></i></div>
+            <div class="learn-item-text"><strong>Laser Procedures</strong><span>All wavelengths &amp; modalities</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-syringe"></i></div>
+            <div class="learn-item-text"><strong>Botox Techniques</strong><span>Precise injection mapping</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-circle-dot"></i></div>
+            <div class="learn-item-text"><strong>Fillers Injection</strong><span>Anatomical filler placement</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-tint"></i></div>
+            <div class="learn-item-text"><strong>PRP Preparation</strong><span>Centrifuge &amp; application</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-microscope"></i></div>
+            <div class="learn-item-text"><strong>Mesotherapy</strong><span>Cocktail &amp; microinjection</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-flask"></i></div>
+            <div class="learn-item-text"><strong>Chemical Peels</strong><span>Superficial to medium depth</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-star"></i></div>
+            <div class="learn-item-text"><strong>Acne Scar Treatment</strong><span>Multi-modal approach</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-leaf"></i></div>
+            <div class="learn-item-text"><strong>Anti Aging</strong><span>Combination protocols</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-user-check"></i></div>
+            <div class="learn-item-text"><strong>Patient Selection</strong><span>Consultation framework</span></div>
+          </div>
+          <div class="learn-item">
+            <div class="learn-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="learn-item-text"><strong>Complication Mgmt</strong><span>Prevention &amp; rescue</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=80" alt="Training session" style="width:100%;height:580px;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section class="gallery reveal">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="section-tag">Training Gallery</div>
+      <h2 class="section-title">Inside Our <em>Training Programs</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=900&q=80" alt="Workshop">
+        <div class="gallery-overlay"><span>Hands-on Workshop</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=500&q=80" alt="Conference">
+        <div class="gallery-overlay"><span>International Conference</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=80" alt="Live Training">
+        <div class="gallery-overlay"><span>Live Patient Training</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1609188076864-c35269136b09?w=500&q=80" alt="Certification">
+        <div class="gallery-overlay"><span>Certification Ceremony</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=500&q=80" alt="Laser Training">
+        <div class="gallery-overlay"><span>Laser Technique Demo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY TRAIN ─── -->
+<section class="why reveal">
+  <div class="container">
+    <div class="why-header">
+      <div class="section-tag">Our Advantage</div>
+      <h2 class="section-title">Why Train <em>With Us</em></h2>
+      <p class="section-body">We go far beyond textbook instruction — every element of our program is built for real-world clinical excellence.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe"></i></div>
+        <h3>International Trainer</h3>
+        <p>Learn directly from an internationally certified aesthetic physician with global training and conference experience across multiple countries.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-hands"></i></div>
+        <h3>Hands-on Training</h3>
+        <p>Every session prioritises practical skill-building. You practice under direct supervision from day one, building muscle memory and clinical confidence.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-user-md"></i></div>
+        <h3>Live Patient Practice</h3>
+        <p>Unlike theoretical courses, our programs include real supervised patient cases giving you authentic clinical experience before you graduate.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-certificate"></i></div>
+        <h3>Certification Provided</h3>
+        <p>Receive an internationally recognised certificate of completion to validate your expertise and add professional credentials to your practice.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-users"></i></div>
+        <h3>Small Batch Training</h3>
+        <p>We deliberately limit batch sizes to ensure maximum faculty attention and meaningful hands-on time for every participant throughout the course.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <h3>Post Training Support</h3>
+        <p>Our commitment extends beyond the classroom with dedicated post-training mentorship, clinical query support and ongoing professional guidance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO CAN JOIN ─── -->
+<section class="who reveal">
+  <div class="container">
+    <div class="who-inner">
+      <div>
+        <div class="section-tag">Eligibility</div>
+        <h2 class="section-title">Who Can <em>Join Our Programs</em></h2>
+        <p class="section-body">Our training programs are open to qualified medical professionals who wish to build or advance their aesthetic medicine skills.</p>
+        <div class="who-list">
+          <div class="who-item"><i class="fas fa-user-md"></i><span>MBBS Doctors</span></div>
+          <div class="who-item"><i class="fas fa-stethoscope"></i><span>Dermatologists &amp; Skin Specialists</span></div>
+          <div class="who-item"><i class="fas fa-cut"></i><span>Plastic &amp; Reconstructive Surgeons</span></div>
+          <div class="who-item"><i class="fas fa-tooth"></i><span>Dental Surgeons &amp; Oral Physicians</span></div>
+          <div class="who-item"><i class="fas fa-spa"></i><span>Aesthetic Physicians &amp; Cosmetologists</span></div>
+        </div>
+      </div>
+      <div class="who-right">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=700&q=80" alt="Medical professionals">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CERTIFICATION ─── -->
+<section class="cert reveal">
+  <div class="container">
+    <div class="cert-inner">
+      <div class="cert-text">
+        <div class="section-tag">Certification</div>
+        <h2 class="section-title">International <em>Certification</em> Provided</h2>
+        <p class="section-body">Upon successful completion of your chosen program, you will receive an internationally recognised certificate that validates your advanced aesthetic medicine training.</p>
+        <ul class="cert-points">
+          <li><i class="fas fa-check-circle"></i> Internationally recognised certificate of completion</li>
+          <li><i class="fas fa-check-circle"></i> Signed by the training faculty &amp; institute director</li>
+          <li><i class="fas fa-check-circle"></i> Includes procedure log &amp; case documentation</li>
+          <li><i class="fas fa-check-circle"></i> Eligible for CME credit recognition</li>
+          <li><i class="fas fa-check-circle"></i> Digital &amp; physical certificate provided</li>
+        </ul>
+        <a href="#application" class="btn-gold">Apply for Certification Program <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="cert-img-wrap">
+        <div class="cert-ribbon">Official Certificate</div>
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=700&q=80" alt="Certification">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPLICATION FORM ─── -->
+<section class="application reveal" id="application">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="section-tag" style="justify-content:center;">Training Application</div>
+      <h2 class="section-title">Apply for <em>Training</em></h2>
+      <p class="section-body">Fill in the form below and our training coordinator will contact you within 24 hours to guide you through the next steps.</p>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Dr. Your Name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="+91 98XXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Qualification *</label>
+          <select>
+            <option value="" disabled selected>Select your qualification</option>
+            <option>MBBS</option>
+            <option>MD Dermatology</option>
+            <option>MS Plastic Surgery</option>
+            <option>BDS / MDS</option>
+            <option>Aesthetic Physician</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Course Interested In *</label>
+          <select>
+            <option value="" disabled selected>Select a course</option>
+            <option>Laser Training — 3 Days</option>
+            <option>Botox Training — 2 Days</option>
+            <option>Fillers Training — 2 Days</option>
+            <option>PRP &amp; GFC Training — 2 Days</option>
+            <option>Mesotherapy Training — 2 Days</option>
+            <option>Advanced Aesthetic Course — 1 Week</option>
+            <option>Fellowship in Aesthetic Medicine — 1 Month</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Message / Questions</label>
+          <textarea placeholder="Tell us about your current practice or any specific areas you'd like to focus on..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit" onclick="handleSubmit(event)">
+          <i class="fas fa-paper-plane"></i> Apply Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="section-tag">Begin Your Journey</div>
+    <h2 class="section-title" style="max-width:600px;margin:0 auto 1rem;">Start Your <em>Aesthetic Practice</em> Journey</h2>
+    <p>Join hundreds of doctors who have transformed their careers through our internationally certified training programs.</p>
+    <div class="cta-buttons">
+      <a href="#application" class="btn-gold"><i class="fas fa-graduation-cap"></i> Apply Now</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      <a href="tel:+91XXXXXXXXXX" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Dr. <span>Aesthetics</span></a>
+      <p>A premier aesthetic dermatology practice offering advanced treatments and internationally certified training programs for medical professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="treatments.html">Treatments</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Training</h4>
+      <ul>
+        <li><a href="#courses">Laser Training</a></li>
+        <li><a href="#courses">Botox Training</a></li>
+        <li><a href="#courses">Fillers Training</a></li>
+        <li><a href="#courses">PRP &amp; GFC</a></li>
+        <li><a href="#courses">Fellowship Program</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone" style="width:14px;margin-right:6px;"></i> +91 98XXX XXXXX</a></li>
+        <li><a href="mailto:info@draesthetics.com"><i class="fas fa-envelope" style="width:14px;margin-right:6px;"></i> info@draesthetics.com</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt" style="width:14px;margin-right:6px;"></i> City, India</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Dr. Aesthetics. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (!links) return;
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '72px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = '#fff';
+    links.style.padding = '1.5rem 2rem';
+    links.style.borderBottom = '1px solid #e8d5b0';
+    links.style.zIndex = '999';
+    links.style.gap = '1.2rem';
+  }
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    btn.innerHTML = '<i class="fas fa-check"></i> Application Submitted!';
+    btn.style.background = '#4CAF50';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Apply Now';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+</script>
+</body>
+</html>
+
+Displaying training.html.
