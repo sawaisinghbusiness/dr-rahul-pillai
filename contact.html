@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Appointments | Dr. Aesthetics Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --gold-dark: #A07C45;
+    --gold-pale: #FAF5EC;
+    --white: #FFFFFF;
+    --off-white: #FAFAF8;
+    --beige: #F5F0E8;
+    --beige-mid: #EDE4D4;
+    --text-dark: #1C1812;
+    --text-mid: #4A4238;
+    --text-light: #9A8E82;
+    --border: rgba(201,169,110,0.22);
+    --border-soft: #EDE8DF;
+    --shadow-sm: 0 2px 16px rgba(160,124,69,0.09);
+    --shadow-md: 0 8px 40px rgba(160,124,69,0.14);
+    --shadow-lg: 0 20px 60px rgba(160,124,69,0.18);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ───────────────────────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-soft);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.04);
+  }
+
+  .nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; font-weight: 600;
+    color: var(--text-dark); text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--text-mid); text-decoration: none;
+    position: relative; transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1.5px;
+    background: var(--gold); transition: width 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-dark); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--white) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 50px;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold-dark) !important; }
+
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-dark); transition: 0.3s; }
+
+  /* ── HERO ─────────────────────────────────── */
+  .hero {
+    position: relative; min-height: 72vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(120deg, rgba(18,14,10,0.86) 0%, rgba(18,14,10,0.5) 60%, rgba(18,14,10,0.3) 100%),
+      url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; z-index: 1;
+    background-image: radial-gradient(circle, rgba(201,169,110,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1180px; margin: 0 auto;
+    padding: 6rem 2rem; width: 100%;
+  }
+
+  .pill-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(201,169,110,0.18);
+    border: 1px solid rgba(201,169,110,0.35);
+    padding: 0.4rem 1rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 1.6rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .pill-tag i { font-size: 0.65rem; }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+    font-weight: 300; color: var(--white);
+    line-height: 1.1; max-width: 600px;
+    margin-bottom: 1.4rem;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+
+  .hero p {
+    font-size: 1.05rem; font-weight: 300;
+    color: rgba(255,255,255,0.7); max-width: 460px;
+    margin-bottom: 2.6rem;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold); color: var(--white);
+    padding: 0.85rem 2.2rem; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(201,169,110,0.4);
+  }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,169,110,0.45); }
+
+  .btn-ghost {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    color: var(--white); padding: 0.85rem 2.2rem;
+    border-radius: 50px; border: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); background: rgba(201,169,110,0.15); }
+
+  /* ── CONTACT CARDS ────────────────────────── */
+  .contact-cards-section {
+    background: var(--white);
+    padding: 5rem 2rem;
+  }
+
+  .contact-cards-section .container {
+    max-width: 1180px; margin: 0 auto;
+  }
+
+  .cards-header { text-align: center; margin-bottom: 3.5rem; }
+
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .section-tag::before {
+    content: ''; display: block;
+    width: 20px; height: 1.5px; background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 400; color: var(--text-dark);
+    line-height: 1.2;
+  }
+  .section-title em { font-style: italic; color: var(--gold-dark); }
+
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+  }
+
+  .info-card {
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 2rem 1.6rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+
+  .info-card::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 50px; height: 3px;
+    background: var(--gold);
+    border-radius: 0 0 4px 4px;
+    transition: width 0.3s;
+  }
+
+  .info-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--border); }
+  .info-card:hover::before { width: 80%; }
+
+  .info-icon {
+    width: 52px; height: 52px;
+    background: var(--gold-pale);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem;
+    color: var(--gold); font-size: 1.1rem;
+    transition: background 0.3s;
+  }
+  .info-card:hover .info-icon { background: var(--gold); color: var(--white); }
+
+  .info-card h3 {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 0.6rem;
+  }
+
+  .info-card p {
+    font-size: 0.92rem; font-weight: 300;
+    color: var(--text-mid); line-height: 1.7;
+  }
+
+  .info-card a {
+    color: var(--text-mid); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .info-card a:hover { color: var(--gold-dark); }
+
+  .info-card .hours-row {
+    display: flex; justify-content: space-between;
+    font-size: 0.87rem; font-weight: 300;
+    color: var(--text-mid); padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .info-card .hours-row:last-child { border-bottom: none; }
+  .info-card .hours-row span:last-child { color: var(--text-dark); font-weight: 400; }
+  .closed { color: #c0392b !important; }
+
+  /* ── FORM + WHATSAPP ──────────────────────── */
+  .booking-section { padding: 6rem 2rem; background: var(--beige); }
+
+  .booking-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3.5rem; align-items: start;
+  }
+
+  .form-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 3rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-soft);
+  }
+
+  .form-card .section-tag { justify-content: flex-start; }
+  .form-card .section-title { margin-bottom: 2rem; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.2rem; }
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1.5px solid var(--border-soft);
+    background: var(--off-white);
+    padding: 0.85rem 1.1rem;
+    border-radius: var(--radius-sm);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem; font-weight: 300;
+    color: var(--text-dark); outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    width: 100%; -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-submit { margin-top: 0.5rem; }
+
+  .form-submit button {
+    width: 100%; padding: 1rem;
+    background: var(--gold); color: var(--white);
+    border: none; border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; display: flex;
+    align-items: center; justify-content: center; gap: 0.6rem;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(201,169,110,0.35);
+  }
+
+  .form-submit button:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(201,169,110,0.4); }
+
+  /* Sidebar */
+  .contact-sidebar { display: flex; flex-direction: column; gap: 1.8rem; }
+
+  .whatsapp-card {
+    background: linear-gradient(135deg, #0a4a2a 0%, #128c5c 100%);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 8px 30px rgba(18,140,92,0.3);
+  }
+
+  .whatsapp-card::before {
+    content: '\f232';
+    font-family: 'Font Awesome 6 Brands';
+    position: absolute; top: -10px; right: -10px;
+    font-size: 7rem; color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+
+  .whatsapp-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400;
+    color: var(--white); margin-bottom: 0.6rem;
+  }
+
+  .whatsapp-card p {
+    font-size: 0.88rem; font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.8rem; line-height: 1.7;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--white); color: #128c5c;
+    padding: 0.85rem 2rem; border-radius: 50px;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  .quick-contacts {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+  }
+
+  .quick-contact-item {
+    display: flex; align-items: center; gap: 1.1rem;
+    padding: 1.3rem 1.6rem;
+    border-bottom: 1px solid var(--border-soft);
+    text-decoration: none; color: var(--text-dark);
+    transition: background 0.2s;
+  }
+  .quick-contact-item:last-child { border-bottom: none; }
+  .quick-contact-item:hover { background: var(--gold-pale); }
+
+  .qc-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 0.9rem;
+  }
+
+  .qc-icon.phone { background: #FFF3E0; color: #E65100; }
+  .qc-icon.email { background: #E8F5E9; color: #2E7D32; }
+  .qc-icon.insta { background: #FCE4EC; color: #AD1457; }
+  .qc-icon.map { background: #E3F2FD; color: #1565C0; }
+
+  .qc-text strong {
+    display: block; font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.05em; color: var(--text-dark);
+  }
+  .qc-text span { font-size: 0.82rem; font-weight: 300; color: var(--text-light); }
+
+  /* ── MAP ──────────────────────────────────── */
+  .map-section { padding: 0; }
+
+  .map-header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    background: var(--white);
+  }
+
+  .map-container {
+    position: relative;
+    width: 100%; height: 460px;
+    background: #e8e0d4;
+    overflow: hidden;
+  }
+
+  .map-container iframe {
+    width: 100%; height: 100%;
+    border: none; display: block;
+  }
+
+  .map-overlay-card {
+    position: absolute;
+    top: 30px; left: 40px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+    box-shadow: var(--shadow-lg);
+    max-width: 240px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .map-overlay-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 500;
+    color: var(--text-dark); margin-bottom: 0.5rem;
+  }
+
+  .map-overlay-card p {
+    font-size: 0.82rem; font-weight: 300;
+    color: var(--text-mid); line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  .map-overlay-card a {
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold-dark); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .map-overlay-card a:hover { color: var(--gold); }
+
+  /* ── FAQ ──────────────────────────────────── */
+  .faq-section { padding: 6rem 2rem; background: var(--off-white); }
+
+  .faq-inner {
+    max-width: 800px; margin: 0 auto;
+  }
+
+  .faq-header { text-align: center; margin-bottom: 3.5rem; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+
+  .faq-item {
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+
+  .faq-item.open { box-shadow: var(--shadow-sm); border-color: var(--border); }
+
+  .faq-question {
+    width: 100%; padding: 1.4rem 1.8rem;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; background: none; border: none;
+    text-align: left; gap: 1rem;
+    font-family: 'Outfit', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: var(--gold-pale); }
+  .faq-item.open .faq-question { background: var(--gold-pale); }
+
+  .faq-question span {
+    font-size: 0.95rem; font-weight: 400;
+    color: var(--text-dark); flex: 1;
+  }
+
+  .faq-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--beige);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-dark); font-size: 0.72rem; flex-shrink: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .faq-item.open .faq-icon { background: var(--gold); color: var(--white); transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    padding: 0 1.8rem;
+  }
+
+  .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.8rem 1.4rem; }
+
+  .faq-answer p {
+    font-size: 0.9rem; font-weight: 300;
+    color: var(--text-mid); line-height: 1.9;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 1.1rem;
+  }
+
+  /* ── CTA BANNER ───────────────────────────── */
+  .cta-section {
+    position: relative; padding: 7rem 2rem;
+    text-align: center; overflow: hidden;
+    background:
+      linear-gradient(rgba(18,14,10,0.83), rgba(18,14,10,0.83)),
+      url('https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=1400&q=80') center/cover no-repeat;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 16px;
+    border: 1px solid rgba(201,169,110,0.2);
+    pointer-events: none;
+  }
+
+  .cta-section .section-tag { justify-content: center; color: var(--gold-light); }
+  .cta-section .section-tag::before { background: var(--gold-light); }
+  .cta-section .section-title { color: var(--white); margin: 0.6rem 0 1rem; }
+  .cta-section .section-title em { color: var(--gold-light); }
+
+  .cta-section p {
+    font-size: 1rem; font-weight: 300;
+    color: rgba(255,255,255,0.6); margin-bottom: 2.6rem;
+  }
+
+  .cta-buttons {
+    display: flex; gap: 1rem;
+    justify-content: center; flex-wrap: wrap;
+  }
+
+  .btn-outline-white {
+    background: transparent; color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-decoration: none; display: inline-flex;
+    align-items: center; gap: 0.5rem;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+  }
+  .btn-outline-white:hover { border-color: var(--gold); color: var(--gold); }
+
+  .btn-wa-cta {
+    background: #25D366; color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border: none; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: opacity 0.3s, transform 0.2s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  }
+  .btn-wa-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ── FOOTER ───────────────────────────────── */
+  footer { background: #0E0B08; padding: 4.5rem 2rem 0; }
+
+  .footer-grid {
+    max-width: 1180px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1.3fr;
+    gap: 3rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--white); text-decoration: none;
+    display: block; margin-bottom: 1rem;
+  }
+  .footer-logo-text span { color: var(--gold); }
+
+  .footer-tagline {
+    font-size: 0.87rem; font-weight: 300;
+    color: rgba(255,255,255,0.38); line-height: 1.9;
+    margin-bottom: 1.4rem;
+  }
+
+  .footer-socials { display: flex; gap: 0.7rem; }
+
+  .footer-socials a {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4); font-size: 0.82rem;
+    text-decoration: none; transition: border-color 0.3s, color 0.3s, background 0.3s;
+  }
+  .footer-socials a:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,169,110,0.08); }
+
+  .footer-col h4 {
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.3rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .footer-col ul li a {
+    font-size: 0.87rem; font-weight: 300;
+    color: rgba(255,255,255,0.42); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-col .contact-line {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    font-size: 0.87rem; font-weight: 300;
+    color: rgba(255,255,255,0.42); margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+  .footer-col .contact-line i {
+    color: var(--gold); font-size: 0.8rem;
+    margin-top: 3px; flex-shrink: 0;
+  }
+  .footer-col .contact-line a {
+    color: rgba(255,255,255,0.42); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col .contact-line a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1180px; margin: 0 auto;
+    padding: 1.5rem 0;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.78rem; color: rgba(255,255,255,0.25);
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.3); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ───────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ── MOBILE ───────────────────────────────── */
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .info-cards { grid-template-columns: 1fr 1fr; }
+    .booking-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .map-overlay-card { position: relative; top: auto; left: auto; max-width: 100%; border-radius: 0; }
+    .map-container { height: 360px; }
+  }
+
+  @media (max-width: 600px) {
+    .info-cards { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.6rem; }
+    .cta-buttons, .hero-btns { flex-direction: column; align-items: center; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Dr. <span>Aesthetics</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="treatments.html">Treatments</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="contact.html" class="active nav-cta">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="pill-tag"><i class="fas fa-circle"></i> We're Open Mon – Sat</div>
+    <h1>Contact &amp; <em>Appointment</em></h1>
+    <p>Book your consultation or reach out for any treatment or training inquiry. We respond within 24 hours.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+      <a href="tel:+91XXXXXXXXXX" class="btn-ghost"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT INFO CARDS ── -->
+<section class="contact-cards-section reveal">
+  <div class="container">
+    <div class="cards-header">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Our <em>Contact</em> Details</h2>
+    </div>
+    <div class="info-cards">
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Address</h3>
+        <p>
+          123, Clinic Street, Near Landmark<br>
+          City, State – 400001<br>
+          India
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-phone"></i></div>
+        <h3>Call Us</h3>
+        <p>
+          <a href="tel:+91XXXXXXXXXX">+91 98XXX XXXXX</a><br>
+          <a href="tel:+91XXXXXXXXXX">+91 98XXX XXXXX</a><br>
+          <small style="color:var(--text-light);font-size:0.78rem;">Mon – Sat, 10am – 7pm</small>
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email Us</h3>
+        <p>
+          <a href="mailto:clinic@email.com">clinic@email.com</a><br>
+          <a href="mailto:training@email.com">training@email.com</a><br>
+          <small style="color:var(--text-light);font-size:0.78rem;">We reply within 24 hours</small>
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <h3>Working Hours</h3>
+        <div class="hours-row"><span>Mon – Fri</span><span>10:00 AM – 7:00 PM</span></div>
+        <div class="hours-row"><span>Saturday</span><span>10:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span class="closed">Closed</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING FORM + SIDEBAR ── -->
+<section class="booking-section reveal" id="booking">
+  <div class="booking-inner">
+
+    <!-- Form -->
+    <div class="form-card">
+      <div class="section-tag">Appointment</div>
+      <h2 class="section-title">Book Your <em>Consultation</em></h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="+91 98XXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date">
+        </div>
+        <div class="form-group full">
+          <label>Select Treatment *</label>
+          <select>
+            <option value="" disabled selected>Select a treatment</option>
+            <optgroup label="Skin Treatments">
+              <option>Laser Skin Resurfacing</option>
+              <option>Chemical Peel</option>
+              <option>Acne &amp; Scar Treatment</option>
+              <option>Skin Brightening</option>
+              <option>Anti Aging / Rejuvenation</option>
+            </optgroup>
+            <optgroup label="Hair Treatments">
+              <option>PRP for Hair Loss</option>
+              <option>GFC Hair Treatment</option>
+              <option>Hair Mesotherapy</option>
+              <option>Laser Hair Removal</option>
+            </optgroup>
+            <optgroup label="Injectables">
+              <option>Botox / Anti Wrinkle</option>
+              <option>Dermal Fillers</option>
+              <option>Lip Augmentation</option>
+            </optgroup>
+            <optgroup label="Training Inquiry">
+              <option>Laser Training Program</option>
+              <option>Botox / Fillers Training</option>
+              <option>Fellowship Program</option>
+            </optgroup>
+            <option>General Consultation</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your concern or any questions you have..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" onclick="handleSubmit(event)">
+          <i class="fas fa-calendar-check"></i> Book Appointment
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="contact-sidebar">
+
+      <div class="whatsapp-card">
+        <h3>Quick Contact on WhatsApp</h3>
+        <p>Get an instant response from our team. Chat with us for appointment booking, treatment queries or training inquiries.</p>
+        <a href="https://wa.me/91XXXXXXXXXX" class="btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="quick-contacts">
+        <a href="tel:+91XXXXXXXXXX" class="quick-contact-item">
+          <div class="qc-icon phone"><i class="fas fa-phone"></i></div>
+          <div class="qc-text">
+            <strong>Call the Clinic</strong>
+            <span>+91 98XXX XXXXX</span>
+          </div>
+          <i class="fas fa-chevron-right" style="color:var(--text-light);font-size:0.75rem;margin-left:auto;"></i>
+        </a>
+        <a href="mailto:clinic@email.com" class="quick-contact-item">
+          <div class="qc-icon email"><i class="fas fa-envelope"></i></div>
+          <div class="qc-text">
+            <strong>Send Email</strong>
+            <span>clinic@email.com</span>
+          </div>
+          <i class="fas fa-chevron-right" style="color:var(--text-light);font-size:0.75rem;margin-left:auto;"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="quick-contact-item">
+          <div class="qc-icon insta"><i class="fab fa-instagram"></i></div>
+          <div class="qc-text">
+            <strong>Instagram DM</strong>
+            <span>@draesthetics</span>
+          </div>
+          <i class="fas fa-chevron-right" style="color:var(--text-light);font-size:0.75rem;margin-left:auto;"></i>
+        </a>
+        <a href="#map" class="quick-contact-item">
+          <div class="qc-icon map"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="qc-text">
+            <strong>Get Directions</strong>
+            <span>View on Google Maps</span>
+          </div>
+          <i class="fas fa-chevron-right" style="color:var(--text-light);font-size:0.75rem;margin-left:auto;"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MAP ── -->
+<section class="map-section reveal" id="map">
+  <div class="map-header">
+    <div class="section-tag">Find Us</div>
+    <h2 class="section-title">Clinic <em>Location</em></h2>
+  </div>
+  <div class="map-container">
+    <!-- Replace src with your actual Google Maps embed URL -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.69043187082!2d72.74110151662698!3d19.08250490866779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Clinic Location Map">
+    </iframe>
+    <div class="map-overlay-card">
+      <h4>Dr. Aesthetics Clinic</h4>
+      <p>123, Clinic Street, Near Landmark<br>City, State – 400001, India</p>
+      <a href="https://maps.google.com" target="_blank">
+        <i class="fas fa-directions"></i> Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section reveal">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>How do I book an appointment?</span>
+          <div class="faq-icon"><i class="fas fa-plus"></i></div>
+        </button>
+        <div class="faq-answer">
+          <p>You can book an appointment by filling out the form on this page, calling us directly at +91 98XXX XXXXX, messaging us on WhatsApp, or sending an email to clinic@email.com. Our team will confirm your slot within a few hours.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Is the initial consultation paid or free?</span>
+          <div class="faq-icon"><i class="fas fa-plus"></i></div>
+        </button>
+        <div class="faq-answer">
+          <p>We charge a nominal consultation fee which is adjusted against your treatment cost if you proceed. This ensures dedicated time with our specialist for a thorough skin and hair assessment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>How many sessions are required for results?</span>
+          <div class="faq-icon"><i class="fas fa-plus"></i></div>
+        </button>
+        <div class="faq-answer">
+          <p>The number of sessions varies by treatment and individual skin concerns. For example, laser hair removal typically requires 6–8 sessions, while PRP for hair loss may require 3–4 sessions. Our doctor will provide a personalised treatment plan during your consultation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Is laser treatment safe for Indian skin?</span>
+          <div class="faq-icon"><i class="fas fa-plus"></i></div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We use advanced laser systems specifically designed for all skin types including darker Indian skin tones. Our treatments are performed using internationally approved protocols with strict safety standards to ensure effective, comfortable and safe results.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Where is the clinic located?</span>
+          <div class="faq-icon"><i class="fas fa-plus"></i></div>
+        </button>
+        <div class="faq-answer">
+          <p>Our clinic is located at 123, Clinic Street, Near Landmark, City, State – 400001. You can use the map on this page to get directions. Parking is available nearby and the clinic is easily accessible by public transport.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Do you provide online consultation?</span>
+          <div class="faq-icon"><i class="fas fa-plus"></i></div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, we offer online video consultations for patients who are unable to visit in person. You can book an online consultation through our booking form by selecting "General Consultation" and mentioning your preference in the message field.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section class="cta-section">
+  <div class="section-tag">Begin Today</div>
+  <h2 class="section-title">Start Your Skin &amp; Hair<br><em>Treatment Journey</em> Today</h2>
+  <p>Join thousands of patients who have achieved their skin goals with expert care.</p>
+  <div class="cta-buttons">
+    <a href="tel:+91XXXXXXXXXX" class="btn-outline-white"><i class="fas fa-phone"></i> Call Now</a>
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn-wa-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="#booking" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <a href="index.html" class="footer-logo-text">Dr. <span>Aesthetics</span></a>
+      <p class="footer-tagline">A premier international skin, hair and laser clinic offering advanced aesthetic treatments and professional training programs for medical doctors.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="treatments.html">Treatments</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Treatments</h4>
+      <ul>
+        <li><a href="treatments.html">Laser Skin Treatment</a></li>
+        <li><a href="treatments.html">Botox &amp; Fillers</a></li>
+        <li><a href="treatments.html">PRP &amp; GFC</a></li>
+        <li><a href="treatments.html">Acne Scar Treatment</a></li>
+        <li><a href="treatments.html">Chemical Peels</a></li>
+        <li><a href="treatments.html">Hair Loss Treatment</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-line">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>123, Clinic Street, Near Landmark, City, State – 400001, India</span>
+      </div>
+      <div class="contact-line">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+91XXXXXXXXXX">+91 98XXX XXXXX</a>
+      </div>
+      <div class="contact-line">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:clinic@email.com">clinic@email.com</a>
+      </div>
+      <div class="contact-line">
+        <i class="fas fa-clock"></i>
+        <span>Mon – Sat: 10 AM – 7 PM</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Dr. Aesthetics Clinic. All rights reserved.</span>
+    <span>Designed with care · <a href="#">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (!links) return;
+    const isOpen = links.style.display === 'flex';
+    Object.assign(links.style, {
+      display: isOpen ? 'none' : 'flex',
+      flexDirection: 'column',
+      position: 'absolute',
+      top: '70px', left: '0', right: '0',
+      background: '#fff',
+      padding: '1.5rem 2rem',
+      borderBottom: '1px solid #ede8df',
+      zIndex: '999',
+      gap: '1.1rem',
+      boxShadow: '0 8px 30px rgba(0,0,0,0.08)'
+    });
+    if (isOpen) links.style.display = 'none';
+  }
+
+  // FAQ accordion
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.currentTarget;
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check-circle"></i> Appointment Booked!';
+    btn.style.background = '#27ae60';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  // Set min date for date picker to today
+  const dateInput = document.querySelector('input[type="date"]');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+</script>
+</body>
+</html>
+
+Displaying contact.html.
