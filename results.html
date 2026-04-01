@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results – Dr. Rahul Pillai | Real Patient Before & After</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --gold:#B8933F;--gold-light:#D4AF6A;--gold-pale:#F5EDD8;--gold-subtle:#FAF6EE;
+  --dark:#1A1714;--mid:#3D3630;--muted:#7A7068;--border:#E8DFD0;
+  --white:#FFFFFF;--off-white:#FDFBF8;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--dark);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 32px rgba(184,147,63,.10)}
+.nav-brand{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--dark);letter-spacing:.03em;text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
+.nav-brand span{font-family:var(--sans);font-size:.65rem;font-weight:400;color:var(--gold);letter-spacing:.15em;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-decoration:none;position:relative;padding-bottom:2px;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--gold);color:var(--white);padding:9px 22px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background .25s}
+.nav-cta:hover{background:var(--dark)}
+
+/* BANNER */
+.banner{position:relative;height:480px;margin-top:72px;overflow:hidden;display:flex;align-items:center}
+.banner-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1600&q=80') center/cover no-repeat}
+.banner-gradient{position:absolute;inset:0;background:linear-gradient(110deg,rgba(26,23,20,.86) 45%,rgba(26,23,20,.38) 100%)}
+.banner-content{position:relative;z-index:2;padding:0 8%}
+.banner-eyebrow{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.banner-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.banner h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:16px}
+.banner h1 em{font-style:italic;color:var(--gold-light)}
+.banner p{font-size:.95rem;color:rgba(255,255,255,.65);max-width:520px;line-height:1.8}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--dark);padding:20px 8%;display:flex;justify-content:center;gap:56px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.6);font-size:.78rem;letter-spacing:.1em}
+.trust-item i{color:var(--gold);font-size:.9rem}
+.trust-item strong{color:var(--white);font-weight:500}
+
+/* SECTION COMMON */
+section{padding:88px 8%}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow::after{content:'';flex:1;max-width:40px;height:1px;background:var(--gold)}
+h2.section-title{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--dark);margin-bottom:20px}
+h2.section-title em{font-style:italic;color:var(--gold)}
+.gold-rule{width:60px;height:1px;background:var(--gold);margin:22px 0}
+.gold-rule.c{margin:22px auto}
+.section-lead{font-size:.98rem;color:var(--muted);line-height:1.85}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .25s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-gold{background:var(--gold);color:var(--white)}
+.btn-gold:hover{background:var(--dark)}
+.btn-outline{border:1px solid var(--border);color:var(--mid);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wa{background:#25D366;color:var(--white)}
+.btn-wa:hover{background:#1da851}
+.btn-ghost{border:1px solid rgba(255,255,255,.4);color:var(--white);background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* FILTER */
+.filter-section{background:var(--off-white);padding:44px 8%}
+.filter-wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:1100px;margin:0 auto}
+.filter-btn{padding:9px 20px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .3s;font-family:var(--sans)}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--white)}
+
+/* RESULTS GALLERY */
+.gallery-section{background:var(--white);padding-top:72px}
+.gallery-header{text-align:center;max-width:600px;margin:0 auto 56px}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;max-width:1300px;margin:0 auto}
+
+.ba-card{background:var(--white);border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:transform .35s,box-shadow .35s;position:relative}
+.ba-card:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(0,0,0,.10)}
+.ba-card.hidden{display:none}
+
+/* BEFORE AFTER COMPARISON */
+.ba-compare{position:relative;height:260px;overflow:hidden;user-select:none}
+.ba-before,.ba-after{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:100%;height:100%}
+.ba-after{clip-path:inset(0 50% 0 0);transition:clip-path 0s}
+.ba-slider-line{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);z-index:10;transform:translateX(-50%)}
+.ba-slider-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;background:var(--white);border-radius:50%;z-index:11;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.25);color:var(--gold);font-size:.9rem}
+.ba-label{position:absolute;top:12px;z-index:5;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;background:rgba(26,23,20,.65);color:var(--white);padding:4px 10px;font-family:var(--sans)}
+.ba-label-before{left:12px}
+.ba-label-after{right:12px}
+
+.ba-bg{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.ba-bg i{font-size:2.8rem;opacity:.25}
+.ba-bg span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.35}
+
+.ba-cat-badge{position:absolute;top:12px;left:12px;z-index:6;background:var(--gold);color:var(--white);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 11px;font-weight:500}
+
+.ba-card-body{padding:22px 24px}
+.ba-card-body h3{font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:6px}
+.ba-card-body p{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.ba-card-meta{display:flex;justify-content:space-between;align-items:center}
+.ba-sessions{font-size:.72rem;color:var(--gold);letter-spacing:.1em;font-weight:500}
+.ba-card-meta .btn{padding:8px 16px;font-size:.68rem}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(10,8,6,.95);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(8px)}
+.lightbox.open{opacity:1;pointer-events:all}
+.lb-inner{position:relative;max-width:960px;width:100%;padding:20px}
+.lb-close{position:absolute;top:-50px;right:0;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.6rem;cursor:pointer;transition:color .2s;padding:8px}
+.lb-close:hover{color:var(--white)}
+.lb-slide{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.lb-img{height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative}
+.lb-img-before{background:linear-gradient(135deg,#2a2218,#3d3228)}
+.lb-img-after{background:linear-gradient(135deg,#1e2a1e,#2a402a)}
+.lb-img i{font-size:3.5rem;opacity:.2;color:var(--white)}
+.lb-img-label{position:absolute;top:16px;left:16px;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.12);color:var(--white);padding:5px 12px}
+.lb-info{text-align:center;color:var(--white)}
+.lb-info h3{font-family:var(--serif);font-size:1.8rem;font-weight:300;margin-bottom:8px}
+.lb-info h3 em{font-style:italic;color:var(--gold-light)}
+.lb-info p{color:rgba(255,255,255,.55);font-size:.88rem;margin-bottom:20px}
+.lb-info-meta{display:flex;justify-content:center;gap:32px;margin-bottom:24px}
+.lb-meta-item{text-align:center}
+.lb-meta-item strong{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--gold-light)}
+.lb-meta-item span{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.lb-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--white);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;font-size:1rem;z-index:1}
+.lb-nav:hover{background:var(--gold);border-color:var(--gold)}
+.lb-nav-prev{left:-60px}
+.lb-nav-next{right:-60px}
+
+/* SUCCESS STORIES */
+.stories-section{background:var(--gold-subtle)}
+.stories-header{text-align:center;max-width:580px;margin:0 auto 56px}
+.stories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:1200px;margin:0 auto}
+.story-card{background:var(--white);border:1px solid var(--border);padding:36px 32px;transition:all .35s;position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .4s}
+.story-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(184,147,63,.12)}
+.story-card:hover::before{transform:scaleX(1)}
+.story-patient{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.story-avatar{width:58px;height:58px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.story-avatar i{font-size:1.6rem;color:var(--gold)}
+.story-name h4{font-family:var(--serif);font-size:1.05rem;font-weight:500}
+.story-name span{font-size:.72rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.story-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.story-tag{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border:1px solid var(--border);color:var(--muted)}
+.story-tag.problem{border-color:#e8c4c4;color:#9a4444}
+.story-tag.treatment{border-color:var(--gold-pale);color:var(--gold)}
+.story-tag.result{border-color:#c4e8c8;color:#3a7a3e}
+.story-review{font-size:.88rem;color:var(--muted);line-height:1.8;font-style:italic;border-left:2px solid var(--gold);padding-left:16px;margin-top:16px}
+.stars{color:var(--gold);font-size:.75rem;letter-spacing:2px;margin-bottom:14px}
+
+/* VIDEO SECTION */
+.video-section{background:var(--dark);padding:88px 8%}
+.video-section .eyebrow{color:var(--gold-light)}
+.video-section .eyebrow::after{background:var(--gold)}
+.video-section h2{color:var(--white)}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:48px auto 0}
+.video-card{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#1e1a16,#2d2520);cursor:pointer;overflow:hidden;transition:transform .3s}
+.video-card:hover{transform:scale(1.02)}
+.video-card:nth-child(2){background:linear-gradient(135deg,#1a1e16,#20251a)}
+.video-card:nth-child(3){background:linear-gradient(135deg,#161a1e,#1a2025)}
+.video-thumb-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.play-btn{width:64px;height:64px;background:rgba(184,147,63,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.video-card:hover .play-btn{background:var(--gold);transform:scale(1.1)}
+.play-btn i{font-size:1.3rem;color:var(--white);margin-left:4px}
+.video-title{font-family:var(--serif);font-size:1rem;color:var(--white);text-align:center;padding:0 20px;opacity:.8}
+.video-label{position:absolute;top:14px;left:14px;background:rgba(184,147,63,.85);color:var(--white);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px}
+
+/* WHY BETTER */
+.why-section{background:var(--white)}
+.why-header{text-align:center;max-width:580px;margin:0 auto 56px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+.why-card{padding:36px 28px;border:1px solid var(--border);background:var(--off-white);text-align:center;transition:all .3s}
+.why-card:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(184,147,63,.1);transform:translateY(-4px)}
+.why-icon{width:66px;height:66px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transition:background .3s}
+.why-card:hover .why-icon{background:var(--gold)}
+.why-icon i{font-size:1.4rem;color:var(--gold);transition:color .3s}
+.why-card:hover .why-icon i{color:var(--white)}
+.why-card h4{font-family:var(--serif);font-size:1.1rem;margin-bottom:8px}
+.why-card p{font-size:.82rem;color:var(--muted);line-height:1.7}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#B8933F 0%,#8a6520 40%,#1A1714 100%);padding:112px 8%;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.cta-inner{position:relative;z-index:1}
+.cta-eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500;margin-bottom:16px}
+.cta-section h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:300;color:var(--white);margin-bottom:40px;line-height:1.2}
+.cta-section h2 em{font-style:italic;color:rgba(255,255,255,.8)}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FAQ */
+.faq-section{background:var(--off-white)}
+.faq-header{text-align:center;max-width:560px;margin:0 auto 52px}
+.faq-grid{max-width:860px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:var(--gold)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;cursor:pointer;gap:20px;user-select:none}
+.faq-q span{font-family:var(--serif);font-size:1.08rem;font-weight:400;line-height:1.3}
+.faq-icon{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;color:var(--gold)}
+.faq-item.open .faq-icon{background:var(--gold);border-color:var(--gold);color:var(--white);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
+.faq-a-inner{padding:0 28px 22px;font-size:.88rem;color:var(--muted);line-height:1.85;border-top:1px solid var(--border)}
+
+/* CONTACT */
+.contact-strip{background:var(--dark);padding:72px 8%}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-info h3{font-family:var(--serif);font-size:1.8rem;color:var(--white);margin-bottom:28px}
+.contact-info h3 em{font-style:italic;color:var(--gold-light)}
+.ci-item{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+.ci-item i{color:var(--gold);font-size:.95rem;margin-top:3px;width:16px;flex-shrink:0}
+.ci-item span{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.6}
+.contact-form{display:grid;gap:14px}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:13px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);font-family:var(--sans);font-size:.88rem;font-weight:300;outline:none;transition:border-color .25s;-webkit-appearance:none}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.3)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form select{color:rgba(255,255,255,.4)}
+.contact-form select option{background:var(--dark)}
+.contact-form textarea{resize:vertical;min-height:90px}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 8% 32px}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:48px;margin-bottom:56px;max-width:1200px;margin-left:auto;margin-right:auto}
+.footer-brand p{font-size:.85rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.8;max-width:280px}
+.footer-col h5{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-col ul a:hover{color:var(--gold-light)}
+.footer-contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.footer-contact-item i{color:var(--gold);font-size:.85rem;margin-top:3px}
+.footer-contact-item span{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.6}
+.social-icons{display:flex;gap:12px;margin-top:20px}
+.social-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.85rem;transition:all .25s}
+.social-icon:hover{border-color:var(--gold);color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:28px auto 0;font-size:.77rem;color:rgba(255,255,255,.25)}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.fi.v{opacity:1;transform:none}
+.fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}.fi.d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.lb-nav-prev{left:-16px}.lb-nav-next{right:-16px}.lb-inner{padding:20px 50px}.contact-inner{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){section{padding:64px 6%}.nav-links{display:none}.banner{height:380px}.ba-grid{grid-template-columns:1fr}.lb-slide{grid-template-columns:1fr;gap:8px}.lb-img{height:220px}.stories-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.lb-nav-prev,.lb-nav-next{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">Dr. Rahul Pillai<span>MD · Dermatology & Laser Aesthetics</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Doctor</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="results.html" class="active">Results</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book Appointment</a>
+</nav>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-bg"></div>
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <div class="banner-eyebrow">Documented Outcomes</div>
+    <h1>Real Patient <em>Results</em></h1>
+    <p>Authentic before &amp; after results from treatments performed using advanced laser and international aesthetic protocols.</p>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><i class="fa-solid fa-circle-check"></i><strong>100%</strong> Real Patients</div>
+  <div class="trust-item"><i class="fa-solid fa-camera"></i><strong>Unedited</strong> Photos</div>
+  <div class="trust-item"><i class="fa-solid fa-shield-heart"></i><strong>Safe</strong> Procedures</div>
+  <div class="trust-item"><i class="fa-solid fa-users"></i><strong>10,000+</strong> Patients Treated</div>
+  <div class="trust-item"><i class="fa-solid fa-star"></i><strong>15+</strong> Years Experience</div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-section">
+  <div class="filter-wrap">
+    <button class="filter-btn active" data-cat="all">All Results</button>
+    <button class="filter-btn" data-cat="acne">Acne</button>
+    <button class="filter-btn" data-cat="acnescar">Acne Scars</button>
+    <button class="filter-btn" data-cat="pigmentation">Pigmentation</button>
+    <button class="filter-btn" data-cat="melasma">Melasma</button>
+    <button class="filter-btn" data-cat="hairloss">Hair Loss</button>
+    <button class="filter-btn" data-cat="hairtransplant">Hair Transplant</button>
+    <button class="filter-btn" data-cat="botox">Botox</button>
+    <button class="filter-btn" data-cat="fillers">Fillers</button>
+    <button class="filter-btn" data-cat="antiaging">Anti-Ageing</button>
+    <button class="filter-btn" data-cat="laser">Laser Treatments</button>
+    <button class="filter-btn" data-cat="tattoo">Tattoo Removal</button>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header fi">
+    <div class="eyebrow" style="justify-content:center">Before & After Gallery</div>
+    <h2 class="section-title" style="text-align:center">Patient <em>Transformations</em></h2>
+    <div class="gold-rule c"></div>
+    <p class="section-lead" style="text-align:center;margin:0 auto">Drag the slider on each card to compare before and after. Click any card to view full details.</p>
+  </div>
+  <div class="ba-grid" id="baGrid">
+
+    <!-- ACNE SCAR -->
+    <div class="ba-card fi" data-cat="acnescar" data-idx="0"
+         data-title="Acne Scar Treatment" data-cat-label="Acne Scars"
+         data-sessions="6 Sessions" data-duration="3 Months" data-downtime="5 Days"
+         data-desc="Fractional CO2 laser combined with microneedling RF for ice-pick and boxcar acne scars. Dramatic improvement in skin texture and depth of scars."
+         data-before-color="linear-gradient(135deg,#2a1a10,#4a2a18)" data-after-color="linear-gradient(135deg,#1e2a1a,#2a3a22)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#2a1a10,#4a2a18)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#1e2a1a,#2a3a22)">
+          <i class="fa-regular fa-image" style="color:rgba(100,160,100,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Acne Scars</div>
+      <div class="ba-card-body">
+        <h3>Acne Scar Treatment</h3>
+        <p>Fractional CO2 laser + RF microneedling for ice-pick and boxcar scars.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> 6 Sessions</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIGMENTATION -->
+    <div class="ba-card fi d1" data-cat="pigmentation laser" data-idx="1"
+         data-title="Pigmentation Laser" data-cat-label="Pigmentation"
+         data-sessions="4 Sessions" data-duration="2 Months" data-downtime="3 Days"
+         data-desc="Q-switched Nd:YAG laser targeting melanin deposits for dark spots, uneven skin tone and sun damage. Skin tone dramatically improved."
+         data-before-color="linear-gradient(135deg,#2a1a20,#4a2a38)" data-after-color="linear-gradient(135deg,#1a1a2a,#252540)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#2a1a20,#4a2a38)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#1a1a2a,#252540)">
+          <i class="fa-regular fa-image" style="color:rgba(100,100,180,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Pigmentation</div>
+      <div class="ba-card-body">
+        <h3>Pigmentation Laser</h3>
+        <p>Q-switched laser for dark spots and sun damage. Visible clearing from session 2.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> 4 Sessions</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAIR TRANSPLANT -->
+    <div class="ba-card fi d2" data-cat="hairtransplant" data-idx="2"
+         data-title="Hair Transplant (FUE)" data-cat-label="Hair Transplant"
+         data-sessions="Single Session" data-duration="12 Months" data-downtime="7 Days"
+         data-desc="FUE hair transplant with 3200 grafts for male pattern baldness. Full natural hairline restored at 12 months post-procedure."
+         data-before-color="linear-gradient(135deg,#1a1010,#3a2020)" data-after-color="linear-gradient(135deg,#0a1a10,#183028)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#1a1010,#3a2020)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#0a1a10,#183028)">
+          <i class="fa-regular fa-image" style="color:rgba(60,160,100,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Hair Transplant</div>
+      <div class="ba-card-body">
+        <h3>Hair Transplant (FUE)</h3>
+        <p>3200 grafts. Natural hairline restored. Results at 12 months post-procedure.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> Single Session</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MELASMA -->
+    <div class="ba-card fi d3" data-cat="melasma pigmentation" data-idx="3"
+         data-title="Melasma Treatment" data-cat-label="Melasma"
+         data-sessions="8 Sessions" data-duration="4 Months" data-downtime="1 Day"
+         data-desc="Low-fluence Q-switched laser combined with medical-grade chemical peels and prescription topicals for stubborn hormonal melasma."
+         data-before-color="linear-gradient(135deg,#2a2010,#4a3820)" data-after-color="linear-gradient(135deg,#1a1a20,#2a2a38)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#2a2010,#4a3820)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#1a1a20,#2a2a38)">
+          <i class="fa-regular fa-image" style="color:rgba(120,120,200,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Melasma</div>
+      <div class="ba-card-body">
+        <h3>Melasma Treatment</h3>
+        <p>Laser + peel protocol for stubborn hormonal melasma. Significant lightening achieved.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> 8 Sessions</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACNE -->
+    <div class="ba-card fi d1" data-cat="acne" data-idx="4"
+         data-title="Acne Treatment" data-cat-label="Acne"
+         data-sessions="Monthly – 4 visits" data-duration="3 Months" data-downtime="None"
+         data-desc="Comprehensive acne treatment combining prescription medication, salicylic peels and laser therapy for active cystic acne. Clear skin within 3 months."
+         data-before-color="linear-gradient(135deg,#2a1010,#5a2020)" data-after-color="linear-gradient(135deg,#1a1a1a,#2a2020)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#2a1010,#5a2020)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#1a1a1a,#2a2020)">
+          <i class="fa-regular fa-image" style="color:rgba(160,140,120,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Acne</div>
+      <div class="ba-card-body">
+        <h3>Active Acne Treatment</h3>
+        <p>Medication + peel + laser combination. Clear skin achieved in 3 months.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> Monthly Visits</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TATTOO -->
+    <div class="ba-card fi d2" data-cat="tattoo laser" data-idx="5"
+         data-title="Tattoo Removal" data-cat-label="Tattoo Removal"
+         data-sessions="8 Sessions" data-duration="12 Months" data-downtime="3 Days"
+         data-desc="Advanced picosecond laser for complete tattoo removal of multi-colour tattoo. Progressive fading with no scarring over 8 sessions."
+         data-before-color="linear-gradient(135deg,#101020,#202040)" data-after-color="linear-gradient(135deg,#1a1818,#2a2625)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#101020,#202040)">
+          <i class="fa-regular fa-image" style="color:rgba(100,100,200,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#1a1818,#2a2625)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Tattoo Removal</div>
+      <div class="ba-card-body">
+        <h3>Tattoo Removal</h3>
+        <p>Picosecond laser for multi-colour tattoo. Complete removal with no scarring.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> 8 Sessions</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTOX -->
+    <div class="ba-card fi d3" data-cat="botox antiaging" data-idx="6"
+         data-title="Botox Treatment" data-cat-label="Botox"
+         data-sessions="Single Session" data-duration="Immediate" data-downtime="None"
+         data-desc="Precision botulinum toxin for forehead lines, frown lines and crow's feet. Natural, refreshed results with no frozen appearance."
+         data-before-color="linear-gradient(135deg,#1a1a10,#353520)" data-after-color="linear-gradient(135deg,#101820,#182030)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#1a1a10,#353520)">
+          <i class="fa-regular fa-image" style="color:rgba(184,147,63,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#101820,#182030)">
+          <i class="fa-regular fa-image" style="color:rgba(100,140,200,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Botox</div>
+      <div class="ba-card-body">
+        <h3>Botox — Wrinkle Reduction</h3>
+        <p>Forehead + frown lines + crow's feet. Natural, refreshed result.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> Single Session</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAIR LOSS / PRP -->
+    <div class="ba-card fi d4" data-cat="hairloss" data-idx="7"
+         data-title="PRP + GFC Hair Treatment" data-cat-label="Hair Loss"
+         data-sessions="6 Sessions" data-duration="6 Months" data-downtime="None"
+         data-desc="PRP and GFC growth factor therapy combined to reverse hair thinning and stimulate new hair growth. Significant density improvement at 6 months."
+         data-before-color="linear-gradient(135deg,#1a0a00,#402010)" data-after-color="linear-gradient(135deg,#0a180a,#182818)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#1a0a00,#402010)">
+          <i class="fa-regular fa-image" style="color:rgba(200,120,60,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#0a180a,#182818)">
+          <i class="fa-regular fa-image" style="color:rgba(60,160,80,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Hair Loss</div>
+      <div class="ba-card-body">
+        <h3>PRP + GFC Hair Therapy</h3>
+        <p>Combined PRP and growth factor therapy. Visible density increase at 6 months.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> 6 Sessions</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILLERS -->
+    <div class="ba-card fi d1" data-cat="fillers antiaging" data-idx="8"
+         data-title="Dermal Fillers" data-cat-label="Fillers"
+         data-sessions="Single Session" data-duration="Immediate" data-downtime="1-2 Days"
+         data-desc="Hyaluronic acid fillers for cheek volume, nasolabial folds and lip enhancement. Natural volumisation with immediate results."
+         data-before-color="linear-gradient(135deg,#1a1010,#302020)" data-after-color="linear-gradient(135deg,#0a1020,#182030)">
+      <div class="ba-compare">
+        <div class="ba-before ba-bg" style="background:linear-gradient(135deg,#1a1010,#302020)">
+          <i class="fa-regular fa-image" style="color:rgba(184,100,100,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">Before</span>
+        </div>
+        <div class="ba-after ba-bg" style="background:linear-gradient(135deg,#0a1020,#182030)">
+          <i class="fa-regular fa-image" style="color:rgba(100,140,200,.3)"></i>
+          <span style="font-size:.62rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase">After</span>
+        </div>
+        <div class="ba-slider-line"></div>
+        <div class="ba-slider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="ba-label ba-label-before">Before</div>
+        <div class="ba-label ba-label-after">After</div>
+      </div>
+      <div class="ba-cat-badge">Fillers</div>
+      <div class="ba-card-body">
+        <h3>Dermal Fillers</h3>
+        <p>Cheek, nasolabial and lip enhancement. Natural volumisation, immediate result.</p>
+        <div class="ba-card-meta">
+          <span class="ba-sessions"><i class="fa-solid fa-circle-dot" style="font-size:.55rem"></i> Single Session</span>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section class="stories-section">
+  <div class="stories-header fi">
+    <div class="eyebrow" style="justify-content:center">Patient Stories</div>
+    <h2 class="section-title" style="text-align:center">Success <em>Stories</em></h2>
+    <div class="gold-rule c"></div>
+    <p class="section-lead" style="text-align:center;margin:0 auto">Real experiences shared by real patients about their transformation journey at our clinic.</p>
+  </div>
+  <div class="stories-grid">
+
+    <div class="story-card fi d1">
+      <div class="stars">★★★★★</div>
+      <div class="story-patient">
+        <div class="story-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="story-name"><h4>Priya S.</h4><span>Mumbai · Age 28</span></div>
+      </div>
+      <div class="story-tags">
+        <span class="story-tag problem">Problem: Acne Scars</span>
+        <span class="story-tag treatment">Treatment: Fractional CO2 Laser</span>
+        <span class="story-tag result">Result: 80% Improvement</span>
+      </div>
+      <div class="story-review">"I had suffered from deep acne scars for 7 years. After 5 sessions with Dr. Pillai, my skin texture is completely transformed. The results are beyond what I ever expected."</div>
+    </div>
+
+    <div class="story-card fi d2">
+      <div class="stars">★★★★★</div>
+      <div class="story-patient">
+        <div class="story-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="story-name"><h4>Arjun M.</h4><span>Delhi · Age 34</span></div>
+      </div>
+      <div class="story-tags">
+        <span class="story-tag problem">Problem: Hair Loss</span>
+        <span class="story-tag treatment">Treatment: FUE Hair Transplant</span>
+        <span class="story-tag result">Result: Full Hairline Restored</span>
+      </div>
+      <div class="story-review">"The hair transplant changed my confidence completely. Dr. Pillai's technique is incredibly natural — nobody can even tell I had the procedure. 12 months and the result is just perfect."</div>
+    </div>
+
+    <div class="story-card fi d3">
+      <div class="stars">★★★★★</div>
+      <div class="story-patient">
+        <div class="story-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="story-name"><h4>Sneha R.</h4><span>Bangalore · Age 41</span></div>
+      </div>
+      <div class="story-tags">
+        <span class="story-tag problem">Problem: Melasma & Pigmentation</span>
+        <span class="story-tag treatment">Treatment: Laser + Peel Combo</span>
+        <span class="story-tag result">Result: Skin Tone Evened Out</span>
+      </div>
+      <div class="story-review">"I tried everything for my melasma — creams, home remedies — nothing worked. Dr. Pillai's protocol cleared it in 6 months. I finally feel comfortable in my own skin."</div>
+    </div>
+
+    <div class="story-card fi d4">
+      <div class="stars">★★★★★</div>
+      <div class="story-patient">
+        <div class="story-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="story-name"><h4>Rahel T.</h4><span>UAE · Age 30</span></div>
+      </div>
+      <div class="story-tags">
+        <span class="story-tag problem">Problem: Tattoo Removal</span>
+        <span class="story-tag treatment">Treatment: Picosecond Laser</span>
+        <span class="story-tag result">Result: Complete Removal</span>
+      </div>
+      <div class="story-review">"I was told tattoo removal would leave scars. Dr. Pillai's picosecond laser removed my tattoo completely without any marks. I flew from Dubai specifically for this treatment."</div>
+    </div>
+
+    <div class="story-card fi d1">
+      <div class="stars">★★★★★</div>
+      <div class="story-patient">
+        <div class="story-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="story-name"><h4>Kavya N.</h4><span>Chennai · Age 26</span></div>
+      </div>
+      <div class="story-tags">
+        <span class="story-tag problem">Problem: Severe Acne</span>
+        <span class="story-tag treatment">Treatment: Acne Programme</span>
+        <span class="story-tag result">Result: 95% Clearance</span>
+      </div>
+      <div class="story-review">"Struggled with acne since my teens. The comprehensive programme at Dr. Pillai's clinic cleared my skin within 3 months. His approach is thorough, scientific and genuinely caring."</div>
+    </div>
+
+    <div class="story-card fi d2">
+      <div class="stars">★★★★★</div>
+      <div class="story-patient">
+        <div class="story-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="story-name"><h4>Vikram P.</h4><span>Hyderabad · Age 47</span></div>
+      </div>
+      <div class="story-tags">
+        <span class="story-tag problem">Problem: Wrinkles & Skin Laxity</span>
+        <span class="story-tag treatment">Treatment: Botox + Thread Lift</span>
+        <span class="story-tag result">Result: 10 Years Younger</span>
+      </div>
+      <div class="story-review">"The combination of Botox and thread lift gave me results I didn't think were possible without surgery. I look refreshed and natural — exactly what I wanted. Highly recommend Dr. Pillai."</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="fi" style="max-width:600px;margin-bottom:48px">
+      <div class="eyebrow">Patient Videos</div>
+      <h2 class="section-title" style="color:var(--white)">Video <em style="color:var(--gold-light)">Testimonials</em></h2>
+      <div class="gold-rule"></div>
+      <p class="section-lead" style="color:rgba(255,255,255,.5)">Hear directly from our patients about their experience, treatment journey and results at our clinic.</p>
+    </div>
+    <div class="video-grid fi">
+      <div class="video-card">
+        <div class="video-label">Patient Story</div>
+        <div class="video-thumb-content">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-title">Acne Scar Transformation — Priya's Journey</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-label">Treatment Walkthrough</div>
+        <div class="video-thumb-content">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-title">Hair Transplant — What to Expect</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-label">Patient Review</div>
+        <div class="video-thumb-content">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-title">Melasma Cleared — 6 Month Journey</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BETTER HERE -->
+<section class="why-section fi">
+  <div class="why-header">
+    <div class="eyebrow" style="justify-content:center">Our Edge</div>
+    <h2 class="section-title" style="text-align:center">Why Results Are <em>Better Here</em></h2>
+    <div class="gold-rule c"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fi d1"><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><h4>Advanced Laser Technology</h4><p>Latest-generation platforms — picosecond, fractional CO2, Nd:YAG and RF — producing superior outcomes.</p></div>
+    <div class="why-card fi d2"><div class="why-icon"><i class="fa-solid fa-earth-americas"></i></div><h4>International Protocols</h4><p>USA-trained, globally-certified. Every protocol follows international safety and efficacy standards.</p></div>
+    <div class="why-card fi d3"><div class="why-icon"><i class="fa-solid fa-user-doctor"></i></div><h4>Experienced Doctor</h4><p>Dr. Pillai personally performs or supervises every procedure — 15+ years of clinical expertise.</p></div>
+    <div class="why-card fi d4"><div class="why-icon"><i class="fa-solid fa-user-check"></i></div><h4>Personalised Treatment</h4><p>No two patients receive the same plan. Every protocol is uniquely designed for your skin.</p></div>
+    <div class="why-card fi d1"><div class="why-icon"><i class="fa-solid fa-shield-heart"></i></div><h4>Safe Procedures</h4><p>Thorough pre-treatment assessment, patch testing and post-care — safety is non-negotiable.</p></div>
+    <div class="why-card fi d2"><div class="why-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Proven Results</h4><p>10,000+ documented outcomes. Real patients. Real results. No filters, no exaggeration.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner fi">
+    <div class="cta-eyebrow">Your Transformation Awaits</div>
+    <h2>Start Your Skin &amp; Hair<br><em>Transformation Today</em></h2>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-gold" style="background:var(--white);color:var(--dark)"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+91XXXXXXXXXX" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> Call Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-header fi">
+    <div class="eyebrow" style="justify-content:center">Questions</div>
+    <h2 class="section-title" style="text-align:center">Frequently Asked <em>Questions</em></h2>
+    <div class="gold-rule c"></div>
+  </div>
+  <div class="faq-grid fi">
+    <div class="faq-item">
+      <div class="faq-q"><span>How long do results last?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Results vary by treatment. Laser hair removal results are permanent (90–95% reduction). Scar and pigmentation improvements are long-lasting. Botox lasts 4–6 months; fillers 12–18 months. Hair transplant results are permanent. Maintenance sessions help sustain all results long-term.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Are results permanent?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Some treatments offer permanent results — laser hair removal, hair transplant and scar treatments provide lasting improvement. Aesthetic injectables are temporary by design and require periodic maintenance. Dr. Pillai will clearly explain the longevity of results for your specific treatment during consultation.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Is laser treatment safe for Indian skin?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely. Our clinic uses multi-wavelength laser platforms specifically calibrated for all Fitzpatrick skin types, including darker Indian skin tones (Types IV–VI). A thorough consultation and test patch is always performed before any laser treatment to ensure complete safety.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>How many sessions will I need?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Sessions needed depend on the treatment and your individual concern. Laser hair removal: 6–8 sessions. Acne scars: 4–6 sessions. Pigmentation: 4–6 sessions. PRP/GFC: 4–6 sessions. Dr. Pillai provides a personalised treatment plan with a clear session estimate during your first consultation.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Is there any downtime after treatment?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Most treatments have minimal to no downtime — laser hair removal, PRP, HydraFacial and mild peels allow immediate return to daily activities. Deeper treatments like fractional CO2 laser or medium peels may cause 3–7 days of redness or peeling. Your specific downtime will be discussed before treatment begins.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>When will I see visible results?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Some treatments show immediate results — Botox is visible within 3–7 days; fillers and HydraFacial are instant. Laser and scar treatments show progressive improvement over 4–12 weeks as the skin heals and regenerates. Hair treatments typically show visible improvement from 3–6 months. Dr. Pillai will set realistic expectations for your timeline.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<section class="contact-strip">
+  <div class="contact-inner">
+    <div class="contact-info fi">
+      <h3>Begin Your <em>Transformation</em></h3>
+      <div class="gold-rule"></div>
+      <div class="ci-item"><i class="fa-solid fa-location-dot"></i><span>Clinic Address, City, Country</span></div>
+      <div class="ci-item"><i class="fa-solid fa-phone"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="ci-item"><i class="fa-brands fa-whatsapp"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="ci-item"><i class="fa-solid fa-envelope"></i><span>info@drrahulpillai.com</span></div>
+      <div class="ci-item"><i class="fa-solid fa-clock"></i><span>Mon – Sat: 10:00 AM – 7:00 PM</span></div>
+    </div>
+    <div class="fi d2">
+      <div class="contact-form">
+        <input type="text" placeholder="Your Full Name">
+        <input type="tel" placeholder="Phone Number">
+        <select>
+          <option value="" disabled selected>Treatment of Interest</option>
+          <option>Acne / Acne Scar Treatment</option>
+          <option>Pigmentation / Melasma</option>
+          <option>Hair Transplant</option>
+          <option>PRP / GFC Therapy</option>
+          <option>Laser Hair Removal</option>
+          <option>Botox / Fillers</option>
+          <option>Anti-Ageing</option>
+          <option>Tattoo Removal</option>
+          <option>Other / General Consultation</option>
+        </select>
+        <textarea placeholder="Your message or concern"></textarea>
+        <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="alert('Thank you! We will contact you shortly.')">
+          <i class="fa-regular fa-calendar"></i> Request Consultation
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-brand" style="color:var(--white)">Dr. Rahul Pillai<span>MD · Dermatology & Laser Aesthetics</span></a>
+      <p>International Dermatologist, Laser Specialist and Aesthetic Surgeon delivering world-class skin care.</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Quick Links</h5><ul>
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About Doctor</a></li>
+      <li><a href="treatments.html">Treatments</a></li><li><a href="results.html">Results</a></li>
+      <li><a href="training.html">Training</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Treatments</h5><ul>
+      <li><a href="treatments.html">Laser Treatments</a></li><li><a href="treatments.html">Skin Treatments</a></li>
+      <li><a href="treatments.html">Hair Treatments</a></li><li><a href="treatments.html">Anti-Ageing</a></li>
+      <li><a href="treatments.html">Scar Treatments</a></li><li><a href="treatments.html">HydraFacial</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5>
+      <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Clinic Address, City, Country</span></div>
+      <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@drrahulpillai.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2025 Dr. Rahul Pillai. All rights reserved.</span><span>International Dermatologist & Laser Specialist</span></div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-nav lb-nav-prev" onclick="lbNav(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lb-nav lb-nav-next" onclick="lbNav(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lb-slide">
+      <div class="lb-img lb-img-before" id="lbBefore">
+        <div class="lb-img-label">Before</div>
+        <i class="fa-regular fa-image"></i>
+      </div>
+      <div class="lb-img lb-img-after" id="lbAfter">
+        <div class="lb-img-label">After</div>
+        <i class="fa-regular fa-image"></i>
+      </div>
+    </div>
+    <div class="lb-info">
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc"></p>
+      <div class="lb-info-meta">
+        <div class="lb-meta-item"><strong id="lbSessions"></strong><span>Sessions</span></div>
+        <div class="lb-meta-item"><strong id="lbDuration"></strong><span>Duration</span></div>
+        <div class="lb-meta-item"><strong id="lbDowntime"></strong><span>Downtime</span></div>
+      </div>
+      <div class="lb-btns">
+        <a href="contact.html" class="btn btn-gold"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
+        <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// NAV SCROLL
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+// FILTER
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const cat=this.dataset.cat;
+    document.querySelectorAll('.ba-card').forEach(card=>{
+      const cats=(card.dataset.cat||'').split(' ');
+      card.classList.toggle('hidden',cat!=='all'&&!cats.includes(cat));
+    });
+  });
+});
+
+// BA DRAG SLIDER
+document.querySelectorAll('.ba-compare').forEach(comp=>{
+  const after=comp.querySelector('.ba-after');
+  const line=comp.querySelector('.ba-slider-line');
+  const handle=comp.querySelector('.ba-slider-handle');
+  let dragging=false;
+  const setPos=pct=>{
+    const p=Math.min(100,Math.max(0,pct));
+    after.style.clipPath=`inset(0 ${100-p}% 0 0)`;
+    line.style.left=handle.style.left=p+'%';
+  };
+  setPos(50);
+  const getX=e=>{
+    const r=comp.getBoundingClientRect();
+    const cx=e.touches?e.touches[0].clientX:e.clientX;
+    return ((cx-r.left)/r.width)*100;
+  };
+  comp.addEventListener('mousedown',e=>{dragging=true;setPos(getX(e));e.preventDefault()});
+  comp.addEventListener('touchstart',e=>{dragging=true;setPos(getX(e))},{passive:true});
+  window.addEventListener('mousemove',e=>{if(dragging)setPos(getX(e))});
+  window.addEventListener('touchmove',e=>{if(dragging)setPos(getX(e))},{passive:true});
+  window.addEventListener('mouseup',()=>dragging=false);
+  window.addEventListener('touchend',()=>dragging=false);
+});
+
+// LIGHTBOX
+const cards=Array.from(document.querySelectorAll('.ba-card'));
+let currentLb=-1;
+function openLb(idx){
+  currentLb=idx;
+  const c=cards[idx];
+  if(!c)return;
+  document.getElementById('lbTitle').innerHTML=c.dataset.title+' &mdash; <em style="font-style:italic;color:var(--gold-light)">'+c.dataset.catLabel+'</em>';
+  document.getElementById('lbDesc').textContent=c.dataset.desc;
+  document.getElementById('lbSessions').textContent=c.dataset.sessions;
+  document.getElementById('lbDuration').textContent=c.dataset.duration;
+  document.getElementById('lbDowntime').textContent=c.dataset.downtime;
+  document.getElementById('lbBefore').style.background=c.dataset.beforeColor;
+  document.getElementById('lbAfter').style.background=c.dataset.afterColor;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function lbNav(dir){
+  const visible=cards.filter(c=>!c.classList.contains('hidden'));
+  const ci=visible.indexOf(cards[currentLb]);
+  const ni=(ci+dir+visible.length)%visible.length;
+  openLb(cards.indexOf(visible[ni]));
+}
+cards.forEach((c,i)=>c.addEventListener('click',()=>openLb(i)));
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbNav(1);if(e.key==='ArrowLeft')lbNav(-1)});
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',function(){
+    const item=this.closest('.faq-item');
+    const a=item.querySelector('.faq-a');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>{
+      i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';
+    });
+    if(!isOpen){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+
+// FADE IN
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
+
+Displaying results.html.
