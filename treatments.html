@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatments – Dr. Rahul Pillai | Advanced Laser & Skin Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --gold:#B8933F; --gold-light:#D4AF6A; --gold-pale:#F5EDD8; --gold-subtle:#FAF6EE;
+  --dark:#1A1714; --mid:#3D3630; --muted:#7A7068; --border:#E8DFD0;
+  --white:#FFFFFF; --off-white:#FDFBF8;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',sans-serif;
+  --radius:4px; --shadow:0 8px 40px rgba(0,0,0,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--dark);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 32px rgba(184,147,63,0.10)}
+.nav-brand{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--dark);letter-spacing:.03em;text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
+.nav-brand span{font-family:var(--sans);font-size:.65rem;font-weight:400;color:var(--gold);letter-spacing:.15em;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-decoration:none;position:relative;padding-bottom:2px;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--gold);color:var(--white);padding:9px 22px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background .25s}
+.nav-cta:hover{background:var(--dark)}
+
+/* BANNER */
+.banner{position:relative;height:480px;margin-top:72px;overflow:hidden;display:flex;align-items:center}
+.banner-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=80') center/cover no-repeat}
+.banner-gradient{position:absolute;inset:0;background:linear-gradient(110deg,rgba(26,23,20,.84) 45%,rgba(26,23,20,.35) 100%)}
+.banner-content{position:relative;z-index:2;padding:0 8%}
+.banner-eyebrow{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.banner-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.banner h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:16px}
+.banner h1 em{font-style:italic;color:var(--gold-light)}
+.banner p{font-size:.95rem;color:rgba(255,255,255,.65);max-width:520px;line-height:1.8}
+
+/* SECTION COMMON */
+section{padding:90px 8%}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow::after{content:'';flex:1;max-width:40px;height:1px;background:var(--gold)}
+h2.section-title{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--dark);margin-bottom:20px}
+h2.section-title em{font-style:italic;color:var(--gold)}
+.gold-rule{width:60px;height:1px;background:var(--gold);margin:22px 0}
+.gold-rule.c{margin:22px auto}
+.section-lead{font-size:.98rem;color:var(--muted);line-height:1.85}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .25s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-gold{background:var(--gold);color:var(--white)}
+.btn-gold:hover{background:var(--dark)}
+.btn-outline{border:1px solid var(--border);color:var(--mid);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-dark{background:var(--dark);color:var(--white)}
+.btn-dark:hover{background:var(--mid)}
+.btn-wa{background:#25D366;color:var(--white)}
+.btn-wa:hover{background:#1da851}
+.btn-ghost{border:1px solid rgba(255,255,255,.4);color:var(--white);background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* CATEGORY TABS */
+.filter-section{background:var(--off-white);padding:48px 8%}
+.filter-wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:900px;margin:0 auto}
+.filter-btn{padding:10px 26px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .3s;font-family:var(--sans)}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.filter-count{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:rgba(255,255,255,.25);border-radius:50%;font-size:.62rem;margin-left:6px}
+.filter-btn:not(.active) .filter-count{background:var(--gold-pale);color:var(--gold)}
+
+/* TREATMENTS GRID */
+.treatments-section{background:var(--white);padding-top:64px}
+.treatments-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;max-width:1300px;margin:0 auto}
+.tx-card{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:transform .35s,box-shadow .35s;position:relative}
+.tx-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.10)}
+.tx-card.hidden{display:none}
+.tx-img{width:100%;height:200px;object-fit:cover;display:block;background:var(--gold-pale);position:relative;overflow:hidden}
+.tx-img-placeholder{width:100%;height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:transform .4s}
+.tx-card:hover .tx-img-placeholder{transform:scale(1.04)}
+.tx-img-placeholder i{font-size:2.6rem;opacity:.35}
+.tx-img-placeholder span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.4}
+.tx-cat-badge{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--white);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;font-weight:500}
+.tx-body{padding:26px 26px 22px}
+.tx-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin-bottom:8px}
+.tx-body p{font-size:.84rem;color:var(--muted);line-height:1.7;margin-bottom:20px}
+.tx-actions{display:flex;gap:10px;flex-wrap:wrap}
+.tx-actions .btn{padding:9px 18px;font-size:.7rem}
+
+/* DETAIL MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(26,23,20,.8);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--white);max-width:860px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(20px);transition:transform .4s}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-header{padding:48px 48px 32px;border-bottom:1px solid var(--border)}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--muted);transition:color .2s;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{color:var(--dark)}
+.modal-badge{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.modal-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;line-height:1.15}
+.modal-body{padding:36px 48px 48px;display:grid;gap:28px}
+.modal-section h4{font-family:var(--serif);font-size:1.15rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.modal-section h4 i{color:var(--gold);font-size:.9rem}
+.modal-section p,.modal-section li{font-size:.88rem;color:var(--muted);line-height:1.85}
+.modal-section ul{padding-left:1.2rem}
+.modal-section li{margin-bottom:4px}
+.modal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.modal-stat{background:var(--off-white);padding:18px;text-align:center;border:1px solid var(--border)}
+.modal-stat strong{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--gold)}
+.modal-stat span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.modal-cta{display:flex;gap:14px;flex-wrap:wrap;padding-top:8px}
+
+/* BA SECTION */
+.ba-section{background:var(--gold-subtle);padding:90px 8%}
+.ba-header{text-align:center;max-width:560px;margin:0 auto 52px}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto 40px}
+.ba-card{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.ba-img-row{display:grid;grid-template-columns:1fr 1fr;height:200px}
+.ba-img-half{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative}
+.ba-img-half:first-child{background:linear-gradient(135deg,#e8ddd4,#d4c4b0)}
+.ba-img-half:last-child{background:linear-gradient(135deg,#f0ece6,#e8ddd4)}
+.ba-img-half i{font-size:2rem;color:rgba(184,147,63,.3)}
+.ba-img-half span{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.35)}
+.ba-divider{position:absolute;right:0;top:0;bottom:0;width:2px;background:var(--gold)}
+.ba-card-body{padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
+.ba-card-body h4{font-family:var(--serif);font-size:1rem}
+.ba-card-body span{font-size:.7rem;color:var(--muted)}
+.ba-cta{text-align:center}
+
+/* WHY US */
+.why-section{background:var(--white)}
+.why-header{text-align:center;max-width:560px;margin:0 auto 56px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+.why-card{padding:36px 28px;border:1px solid var(--border);text-align:center;transition:all .3s;background:var(--off-white)}
+.why-card:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(184,147,63,.1);transform:translateY(-4px)}
+.why-icon{width:64px;height:64px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transition:background .3s}
+.why-card:hover .why-icon{background:var(--gold)}
+.why-icon i{font-size:1.4rem;color:var(--gold);transition:color .3s}
+.why-card:hover .why-icon i{color:var(--white)}
+.why-card h4{font-family:var(--serif);font-size:1.1rem;margin-bottom:8px}
+.why-card p{font-size:.82rem;color:var(--muted);line-height:1.7}
+
+/* CTA BANNER */
+.cta-banner{background:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400&q=80') center/cover;position:relative;text-align:center;padding:110px 8%}
+.cta-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,23,20,.88),rgba(61,54,48,.85))}
+.cta-inner{position:relative;z-index:1}
+.cta-inner .eyebrow{justify-content:center;color:var(--gold-light)}
+.cta-inner .eyebrow::after{display:none}
+.cta-inner h2{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.2rem);font-weight:300;color:var(--white);margin:16px 0 36px;line-height:1.2}
+.cta-inner h2 em{font-style:italic;color:var(--gold-light)}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FAQ */
+.faq-section{background:var(--off-white)}
+.faq-header{text-align:center;max-width:560px;margin:0 auto 52px}
+.faq-grid{max-width:860px;margin:0 auto;display:grid;gap:14px}
+.faq-item{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:var(--gold)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;cursor:pointer;gap:20px;user-select:none}
+.faq-q span{font-family:var(--serif);font-size:1.08rem;font-weight:400;line-height:1.3}
+.faq-icon{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;color:var(--gold)}
+.faq-item.open .faq-icon{background:var(--gold);border-color:var(--gold);color:var(--white);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
+.faq-a-inner{padding:0 28px 22px;font-size:.88rem;color:var(--muted);line-height:1.85;border-top:1px solid var(--border)}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--dark);padding:72px 8%}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-info h3{font-family:var(--serif);font-size:1.8rem;color:var(--white);margin-bottom:28px}
+.contact-info h3 em{font-style:italic;color:var(--gold-light)}
+.ci-item{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+.ci-item i{color:var(--gold);font-size:.95rem;margin-top:3px;width:16px;flex-shrink:0}
+.ci-item span{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.6}
+.contact-form{display:grid;gap:14px}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:13px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);font-family:var(--sans);font-size:.88rem;font-weight:300;outline:none;transition:border-color .25s;-webkit-appearance:none}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.3)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form select{color:rgba(255,255,255,.5)}
+.contact-form select option{background:var(--dark);color:var(--white)}
+.contact-form textarea{resize:vertical;min-height:100px}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 8% 32px}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:48px;margin-bottom:56px;max-width:1200px;margin-left:auto;margin-right:auto}
+.footer-brand p{font-size:.85rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.8;max-width:280px}
+.footer-col h5{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-col ul a:hover{color:var(--gold-light)}
+.footer-contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.footer-contact-item i{color:var(--gold);font-size:.85rem;margin-top:3px}
+.footer-contact-item span{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.6}
+.social-icons{display:flex;gap:12px;margin-top:20px}
+.social-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.85rem;transition:all .25s}
+.social-icon:hover{border-color:var(--gold);color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:28px auto 0;font-size:.77rem;color:rgba(255,255,255,.25)}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.fi.v{opacity:1;transform:none}
+.fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}.fi.d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.contact-inner{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){section{padding:64px 6%}.nav-links{display:none}.banner{height:380px}.ba-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.modal-body{padding:24px}.modal-header{padding:32px 24px}.modal-stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">Dr. Rahul Pillai<span>MD · Dermatology & Laser Aesthetics</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Doctor</a></li>
+    <li><a href="treatments.html" class="active">Treatments</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book Appointment</a>
+</nav>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-bg"></div>
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <div class="banner-eyebrow">Expert Clinical Care</div>
+    <h1>Skin, Hair &amp; <em>Laser</em><br>Treatments</h1>
+    <p>Advanced treatments using modern laser technology and international protocols for safe, effective, and lasting results.</p>
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-section">
+  <div class="filter-wrap">
+    <button class="filter-btn active" data-cat="all">All Treatments <span class="filter-count">26</span></button>
+    <button class="filter-btn" data-cat="laser">Laser Treatments <span class="filter-count">5</span></button>
+    <button class="filter-btn" data-cat="skin">Skin Treatments <span class="filter-count">7</span></button>
+    <button class="filter-btn" data-cat="hair">Hair Treatments <span class="filter-count">4</span></button>
+    <button class="filter-btn" data-cat="antiaging">Anti-Ageing <span class="filter-count">5</span></button>
+    <button class="filter-btn" data-cat="scar">Scar Treatments <span class="filter-count">4</span></button>
+  </div>
+</div>
+
+<!-- TREATMENTS GRID -->
+<section class="treatments-section" id="treatments">
+  <div class="treatments-grid" id="txGrid">
+
+    <!-- LASER -->
+    <div class="tx-card fi" data-cat="laser">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a2a3a,#2d4a6a)">
+        <i class="fa-solid fa-bolt" style="color:rgba(212,175,106,.4)"></i>
+        <span>Laser Treatment</span>
+      </div>
+      <div class="tx-cat-badge">Laser</div>
+      <div class="tx-body">
+        <h3>Laser Hair Removal</h3>
+        <p>Permanent hair reduction using advanced diode and Nd:YAG laser technology. Safe for all skin types.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('lhr')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d1" data-cat="laser">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#2a1a1a,#5a2a2a)">
+        <i class="fa-solid fa-sun" style="color:rgba(212,175,106,.4)"></i>
+        <span>Pigmentation Laser</span>
+      </div>
+      <div class="tx-cat-badge">Laser</div>
+      <div class="tx-body">
+        <h3>Pigmentation Laser</h3>
+        <p>Targeted Q-switched and picosecond laser for dark spots, uneven skin tone and sun damage.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('pig')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d2" data-cat="laser">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a1a2a,#2a2a5a)">
+        <i class="fa-solid fa-eraser" style="color:rgba(212,175,106,.4)"></i>
+        <span>Tattoo Removal</span>
+      </div>
+      <div class="tx-cat-badge">Laser</div>
+      <div class="tx-body">
+        <h3>Tattoo Removal</h3>
+        <p>Advanced picosecond laser for complete tattoo removal with minimal sessions and no scarring.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('tattoo')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d3" data-cat="laser">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a2a1a,#2a5a3a)">
+        <i class="fa-solid fa-arrows-to-dot" style="color:rgba(212,175,106,.4)"></i>
+        <span>Skin Tightening</span>
+      </div>
+      <div class="tx-cat-badge">Laser</div>
+      <div class="tx-body">
+        <h3>Skin Tightening Laser</h3>
+        <p>Non-ablative laser and radiofrequency for collagen stimulation, firming loose skin naturally.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('tight')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d4" data-cat="laser scar">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#2a1a2a,#5a3a5a)">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color:rgba(212,175,106,.4)"></i>
+        <span>Scar Laser</span>
+      </div>
+      <div class="tx-cat-badge">Laser</div>
+      <div class="tx-body">
+        <h3>Scar Reduction Laser</h3>
+        <p>Fractional CO2 and erbium laser resurfacing to significantly reduce all types of scars.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('scarl')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKIN -->
+    <div class="tx-card fi d1" data-cat="skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#2a1a10,#6a3a20)">
+        <i class="fa-solid fa-face-smile" style="color:rgba(212,175,106,.4)"></i>
+        <span>Acne Treatment</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>Acne Treatment</h3>
+        <p>Comprehensive acne management combining medical therapy, laser and advanced skin care protocols.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('acne')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d2" data-cat="skin scar">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a2010,#3a5020)">
+        <i class="fa-solid fa-circle-dot" style="color:rgba(212,175,106,.4)"></i>
+        <span>Acne Scar Treatment</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>Acne Scar Treatment</h3>
+        <p>Multi-modality treatment including fractional laser, microneedling and subcision for scar correction.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('acnescar')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d3" data-cat="skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#201020,#502050)">
+        <i class="fa-solid fa-droplet" style="color:rgba(212,175,106,.4)"></i>
+        <span>Pigmentation</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>Pigmentation Treatment</h3>
+        <p>Targeted therapy for dark patches, hyperpigmentation and uneven skin tone using proven protocols.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('pigm')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d4" data-cat="skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#102020,#205050)">
+        <i class="fa-solid fa-mask" style="color:rgba(212,175,106,.4)"></i>
+        <span>Melasma</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>Melasma Treatment</h3>
+        <p>Specialised treatment combining laser, peels and medical therapy for stubborn melasma.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('mel')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d1" data-cat="skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a1a10,#4a4a20)">
+        <i class="fa-solid fa-sparkles" style="color:rgba(212,175,106,.4)"></i>
+        <span>Skin Whitening</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>Skin Brightening</h3>
+        <p>Advanced brightening treatments using glutathione therapy, vitamin infusions and laser.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('bright')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d2" data-cat="skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#20100a,#503020)">
+        <i class="fa-solid fa-flask" style="color:rgba(212,175,106,.4)"></i>
+        <span>Chemical Peel</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>Chemical Peel</h3>
+        <p>Medical-grade superficial and medium-depth peels for skin renewal, glow and texture improvement.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('peel')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d3" data-cat="skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#102a20,#206a4a)">
+        <i class="fa-solid fa-tint" style="color:rgba(212,175,106,.4)"></i>
+        <span>Hydra Facial</span>
+      </div>
+      <div class="tx-cat-badge">Skin</div>
+      <div class="tx-body">
+        <h3>HydraFacial</h3>
+        <p>Advanced 3-step hydradermabrasion for deep cleansing, hydration and instant luminous skin.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('hydra')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAIR -->
+    <div class="tx-card fi d1" data-cat="hair">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a100a,#4a2a10)">
+        <i class="fa-solid fa-person" style="color:rgba(212,175,106,.4)"></i>
+        <span>Hair Transplant</span>
+      </div>
+      <div class="tx-cat-badge">Hair</div>
+      <div class="tx-body">
+        <h3>Hair Transplant (FUE/FUT)</h3>
+        <p>Natural-looking, permanent hair restoration using advanced FUE and FUT transplant techniques.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('ht')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d2" data-cat="hair">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#0a1a10,#1a4a2a)">
+        <i class="fa-solid fa-syringe" style="color:rgba(212,175,106,.4)"></i>
+        <span>PRP Therapy</span>
+      </div>
+      <div class="tx-cat-badge">Hair</div>
+      <div class="tx-body">
+        <h3>PRP Therapy</h3>
+        <p>Platelet-rich plasma injections to stimulate dormant follicles and reverse early-stage hair loss.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('prp')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d3" data-cat="hair">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#10100a,#3a3a10)">
+        <i class="fa-solid fa-dna" style="color:rgba(212,175,106,.4)"></i>
+        <span>GFC Treatment</span>
+      </div>
+      <div class="tx-cat-badge">Hair</div>
+      <div class="tx-body">
+        <h3>GFC Treatment</h3>
+        <p>Growth Factor Concentrate therapy — a next-generation treatment for hair regrowth and density.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('gfc')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d4" data-cat="hair">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a0a10,#4a1a2a)">
+        <i class="fa-solid fa-leaf" style="color:rgba(212,175,106,.4)"></i>
+        <span>Hair Loss</span>
+      </div>
+      <div class="tx-cat-badge">Hair</div>
+      <div class="tx-body">
+        <h3>Hair Loss Treatment</h3>
+        <p>Comprehensive hair loss assessment and treatment combining medical, laser and regenerative therapy.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('hl')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANTI AGING -->
+    <div class="tx-card fi d1" data-cat="antiaging">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#10101a,#20204a)">
+        <i class="fa-solid fa-shield-virus" style="color:rgba(212,175,106,.4)"></i>
+        <span>Botox</span>
+      </div>
+      <div class="tx-cat-badge">Anti-Ageing</div>
+      <div class="tx-body">
+        <h3>Botox</h3>
+        <p>Precision botulinum toxin injections to soften expression lines and achieve a refreshed appearance.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('btx')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d2" data-cat="antiaging">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a100a,#5a3010)">
+        <i class="fa-solid fa-gem" style="color:rgba(212,175,106,.4)"></i>
+        <span>Fillers</span>
+      </div>
+      <div class="tx-cat-badge">Anti-Ageing</div>
+      <div class="tx-body">
+        <h3>Dermal Fillers</h3>
+        <p>Hyaluronic acid fillers to restore volume, contour and youthful fullness to the face.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('fil')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d3" data-cat="antiaging">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#0a1a1a,#1a4a4a)">
+        <i class="fa-solid fa-thread" style="color:rgba(212,175,106,.4)"></i>
+        <span>Thread Lift</span>
+      </div>
+      <div class="tx-cat-badge">Anti-Ageing</div>
+      <div class="tx-body">
+        <h3>Thread Lift</h3>
+        <p>Minimally invasive PDO thread lift for instant facial lifting and long-term collagen stimulation.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('thread')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d4" data-cat="antiaging laser">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a1a0a,#4a4a1a)">
+        <i class="fa-solid fa-fire-flame-curved" style="color:rgba(212,175,106,.4)"></i>
+        <span>Anti Aging Laser</span>
+      </div>
+      <div class="tx-cat-badge">Anti-Ageing</div>
+      <div class="tx-body">
+        <h3>Anti-Ageing Laser</h3>
+        <p>Fractional laser resurfacing and HIFU for non-surgical skin renewal, wrinkle reduction and tightening.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('aal')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d1" data-cat="antiaging skin">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a0a1a,#4a1a4a)">
+        <i class="fa-solid fa-star" style="color:rgba(212,175,106,.4)"></i>
+        <span>Skin Tightening</span>
+      </div>
+      <div class="tx-cat-badge">Anti-Ageing</div>
+      <div class="tx-body">
+        <h3>Skin Tightening</h3>
+        <p>RF microneedling and HIFU for deep dermal tightening without surgery or downtime.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('stk')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCARS -->
+    <div class="tx-card fi d2" data-cat="scar">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a0a0a,#5a1a1a)">
+        <i class="fa-solid fa-circle-half-stroke" style="color:rgba(212,175,106,.4)"></i>
+        <span>Surgical Scar</span>
+      </div>
+      <div class="tx-cat-badge">Scars</div>
+      <div class="tx-body">
+        <h3>Surgical Scar Treatment</h3>
+        <p>Laser resurfacing and steroid therapy for keloids, hypertrophic and post-surgical scars.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('surs')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d3" data-cat="scar">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#0a1010,#1a3030)">
+        <i class="fa-solid fa-expand" style="color:rgba(212,175,106,.4)"></i>
+        <span>Stretch Marks</span>
+      </div>
+      <div class="tx-cat-badge">Scars</div>
+      <div class="tx-body">
+        <h3>Stretch Marks Treatment</h3>
+        <p>Combined laser and microneedling protocol to significantly improve and fade stretch marks.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('str')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-card fi d4" data-cat="scar">
+      <div class="tx-img-placeholder" style="background:linear-gradient(135deg,#1a0a00,#5a2a00)">
+        <i class="fa-solid fa-fire" style="color:rgba(212,175,106,.4)"></i>
+        <span>Burn Scar</span>
+      </div>
+      <div class="tx-cat-badge">Scars</div>
+      <div class="tx-body">
+        <h3>Burn Scar Treatment</h3>
+        <p>Specialised laser resurfacing and reconstructive therapy for burn scar improvement and skin restoration.</p>
+        <div class="tx-actions">
+          <button class="btn btn-outline" onclick="openModal('burn')">View Details</button>
+          <a href="contact.html" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="ba-section fi">
+  <div class="ba-header">
+    <div class="eyebrow" style="justify-content:center">Real Results</div>
+    <h2 class="section-title" style="text-align:center">Before &amp; <em>After</em></h2>
+    <div class="gold-rule c"></div>
+    <p class="section-lead" style="text-align:center;margin:0 auto">Authentic outcomes from our patients — documented results from treatments performed at our clinic.</p>
+  </div>
+  <div class="ba-grid">
+    <div class="ba-card fi d1">
+      <div class="ba-img-row">
+        <div class="ba-img-half"><i class="fa-regular fa-image"></i><span>Before</span><div class="ba-divider"></div></div>
+        <div class="ba-img-half"><i class="fa-regular fa-image"></i><span>After</span></div>
+      </div>
+      <div class="ba-card-body"><h4>Acne Scar Treatment</h4><span>6 Sessions</span></div>
+    </div>
+    <div class="ba-card fi d2">
+      <div class="ba-img-row">
+        <div class="ba-img-half"><i class="fa-regular fa-image"></i><span>Before</span><div class="ba-divider"></div></div>
+        <div class="ba-img-half"><i class="fa-regular fa-image"></i><span>After</span></div>
+      </div>
+      <div class="ba-card-body"><h4>Pigmentation Laser</h4><span>4 Sessions</span></div>
+    </div>
+    <div class="ba-card fi d3">
+      <div class="ba-img-row">
+        <div class="ba-img-half"><i class="fa-regular fa-image"></i><span>Before</span><div class="ba-divider"></div></div>
+        <div class="ba-img-half"><i class="fa-regular fa-image"></i><span>After</span></div>
+      </div>
+      <div class="ba-card-body"><h4>Hair Transplant</h4><span>12 Months</span></div>
+    </div>
+  </div>
+  <div class="ba-cta fi d4">
+    <a href="results.html" class="btn btn-gold"><i class="fa-solid fa-arrow-right"></i> View All Results</a>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section fi">
+  <div class="why-header">
+    <div class="eyebrow" style="justify-content:center">Why Choose Us</div>
+    <h2 class="section-title" style="text-align:center">Excellence in Every <em>Treatment</em></h2>
+    <div class="gold-rule c"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fi d1"><div class="why-icon"><i class="fa-solid fa-earth-americas"></i></div><h4>International Experience</h4><p>USA-trained, globally recognised — bringing world-class protocols to every patient.</p></div>
+    <div class="why-card fi d2"><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><h4>Advanced Laser Technology</h4><p>Latest generation laser platforms for superior outcomes with minimal downtime.</p></div>
+    <div class="why-card fi d3"><div class="why-icon"><i class="fa-solid fa-shield-heart"></i></div><h4>Safe Procedures</h4><p>Safety-first approach with evidence-based protocols and thorough pre-treatment assessment.</p></div>
+    <div class="why-card fi d4"><div class="why-icon"><i class="fa-solid fa-user-check"></i></div><h4>Personalised Treatment</h4><p>Every plan is tailored to your unique skin type, concern and desired outcome.</p></div>
+    <div class="why-card fi d1"><div class="why-icon"><i class="fa-solid fa-users"></i></div><h4>Experienced Team</h4><p>15+ years of clinical expertise across dermatology, laser and aesthetic surgery.</p></div>
+    <div class="why-card fi d2"><div class="why-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Proven Results</h4><p>10,000+ satisfied patients and documented outcomes speak to our clinical standard.</p></div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner fi">
+    <div class="eyebrow" style="color:var(--gold-light)">Ready to Transform?</div>
+    <h2>Book Your <em>Consultation</em> Today</h2>
+    <div class="cta-btns">
+      <a href="tel:+91XXXXXXXXXX" class="btn btn-gold"><i class="fa-solid fa-phone"></i> Call Now</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="contact.html" class="btn btn-ghost"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-header fi">
+    <div class="eyebrow" style="justify-content:center">Common Questions</div>
+    <h2 class="section-title" style="text-align:center">Frequently Asked <em>Questions</em></h2>
+    <div class="gold-rule c"></div>
+  </div>
+  <div class="faq-grid fi">
+    <div class="faq-item">
+      <div class="faq-q"><span>Is laser treatment safe for all skin types?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Our clinic uses advanced multi-wavelength lasers that are calibrated for all Fitzpatrick skin types, including darker Indian skin tones. Every treatment begins with a thorough consultation and test patch to ensure complete safety and suitability.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>How many sessions will I need?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">The number of sessions varies depending on the treatment and your individual skin concern. Laser hair removal typically requires 6–8 sessions, while pigmentation or scar treatments may need 4–6 sessions. Dr. Pillai will provide a personalised treatment plan during your consultation.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Is there any downtime after treatment?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Most treatments such as laser hair removal, HydraFacial and PRP have no downtime at all. Deeper treatments like fractional CO2 laser or chemical peels may have 3–7 days of mild redness or peeling. Dr. Pillai will advise you on what to expect before beginning your treatment.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Are the results permanent?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Results vary by treatment. Laser hair removal offers permanent reduction in hair growth. Scar and pigmentation treatments offer long-lasting improvement. Botox and fillers are temporary (6–18 months). Hair transplants are permanent. Maintenance sessions may be recommended for optimal longevity.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Are the treatments painful?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Patient comfort is our priority. Most laser treatments cause only mild warmth or tingling. We apply topical anaesthetic cream before procedures where needed. Injections like Botox and fillers are performed with the finest needles to minimise discomfort. The majority of patients find the procedures very well tolerated.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>How do I prepare for my first treatment?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></div>
+      <div class="faq-a"><div class="faq-a-inner">For most laser treatments, avoid sun exposure and self-tanning products for 2–4 weeks prior. Do not wax or thread the area. Come to your appointment with clean, product-free skin. Specific preparation instructions will be given after your consultation based on your chosen treatment.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<section class="contact-strip">
+  <div class="contact-inner">
+    <div class="contact-info fi">
+      <h3>Schedule Your <em>Consultation</em></h3>
+      <div class="gold-rule"></div>
+      <div class="ci-item"><i class="fa-solid fa-location-dot"></i><span>Clinic Address, City, Country</span></div>
+      <div class="ci-item"><i class="fa-solid fa-phone"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="ci-item"><i class="fa-brands fa-whatsapp"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="ci-item"><i class="fa-solid fa-envelope"></i><span>info@drrahulpillai.com</span></div>
+      <div class="ci-item"><i class="fa-solid fa-clock"></i><span>Mon – Sat: 10:00 AM – 7:00 PM</span></div>
+    </div>
+    <div class="fi d2">
+      <div class="contact-form">
+        <input type="text" placeholder="Your Full Name">
+        <input type="tel" placeholder="Phone Number">
+        <select>
+          <option value="" disabled selected>Select Treatment</option>
+          <option>Laser Hair Removal</option>
+          <option>Pigmentation Laser</option>
+          <option>Acne / Acne Scar Treatment</option>
+          <option>Hair Transplant / PRP</option>
+          <option>Botox / Fillers</option>
+          <option>Thread Lift</option>
+          <option>Scar Treatment</option>
+          <option>Other / Consultation</option>
+        </select>
+        <textarea placeholder="Message (optional)"></textarea>
+        <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="alert('Thank you! We will contact you shortly.')">
+          <i class="fa-regular fa-calendar"></i> Request Appointment
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-brand" style="color:var(--white)">Dr. Rahul Pillai<span>MD · Dermatology & Laser Aesthetics</span></a>
+      <p>International Dermatologist, Laser Specialist and Aesthetic Surgeon delivering world-class skin care.</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Doctor</a></li>
+        <li><a href="treatments.html">Treatments</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Treatments</h5>
+      <ul>
+        <li><a href="#">Laser Treatments</a></li>
+        <li><a href="#">Skin Treatments</a></li>
+        <li><a href="#">Hair Treatments</a></li>
+        <li><a href="#">Anti-Ageing</a></li>
+        <li><a href="#">Scar Treatments</a></li>
+        <li><a href="#">HydraFacial</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Clinic Address, City, Country</span></div>
+      <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>+91 XXXXX XXXXX</span></div>
+      <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@drrahulpillai.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2025 Dr. Rahul Pillai. All rights reserved.</span><span>International Dermatologist & Laser Specialist</span></div>
+</footer>
+
+<!-- DETAIL MODALS -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-header">
+      <div class="modal-badge" id="mBadge"></div>
+      <h2 class="modal-title" id="mTitle"></h2>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+// FILTER
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const cat = this.dataset.cat;
+    document.querySelectorAll('.tx-card').forEach(card=>{
+      const cats = card.dataset.cat||'';
+      card.classList.toggle('hidden', cat!=='all' && !cats.split(' ').includes(cat));
+    });
+  });
+});
+
+// FADE IN
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',function(){
+    const item=this.closest('.faq-item');
+    const a=item.querySelector('.faq-a');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight='0';
+    });
+    if(!isOpen){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+
+// MODAL DATA
+const modals={
+  lhr:{cat:'Laser Treatment',title:'Laser Hair Removal',what:'Permanent hair reduction using state-of-the-art diode and Nd:YAG laser technology. Suitable for all skin types, this FDA-cleared procedure targets the hair follicle to prevent regrowth while leaving surrounding skin unaffected.',who:'Anyone seeking long-term freedom from unwanted facial or body hair, including patients with dark skin tones.',procedure:'Topical anaesthetic is applied 30 minutes before treatment. The laser handpiece is passed over the area in precise pulses. Sessions take 15–60 minutes depending on area.',recovery:'Mild redness for 2–4 hours. No downtime. Sun protection advised for 2 weeks.',results:'90–95% permanent hair reduction after a full course of sessions.',sessions:'6–8',duration:'30–60 min',downtime:'None'},
+  pig:{cat:'Laser Treatment',title:'Pigmentation Laser',what:'Q-switched and picosecond laser specifically targeting melanin deposits responsible for dark spots, sun damage, freckles and uneven skin tone.',who:'Patients with sunspots, age spots, post-inflammatory hyperpigmentation or uneven complexion.',procedure:'Cooling gel applied to skin. Laser pulses are delivered to pigmented areas. A mild snapping sensation is felt.',recovery:'Treated spots may darken and flake off over 7–10 days before revealing clearer skin.',results:'Significant lightening of pigmented areas with ongoing improvement between sessions.',sessions:'4–6',duration:'20–30 min',downtime:'3–5 days'},
+  tattoo:{cat:'Laser Treatment',title:'Tattoo Removal',what:'Advanced picosecond laser technology that shatters tattoo ink into microscopic particles, which are then cleared naturally by the body\'s immune system.',who:'Anyone wishing to remove or fade an unwanted tattoo, regardless of ink colour or age.',procedure:'Topical anaesthetic applied. Laser pulses target the ink at precise depths. The area is cooled immediately after.',recovery:'Mild swelling and redness for 2–3 days. The treated area is bandaged for the first 24 hours.',results:'Progressive fading with each session. Most tattoos achieve complete removal within a full course.',sessions:'6–12',duration:'20–45 min',downtime:'2–3 days'},
+  tight:{cat:'Laser Treatment',title:'Skin Tightening Laser',what:'Non-ablative laser and radiofrequency energy delivered to the dermis to stimulate new collagen and elastin production, firming lax skin naturally.',who:'Patients with mild to moderate skin laxity on the face, neck, jowls or body.',procedure:'Cooling device protects the surface while laser energy is delivered to deeper skin layers. No incisions required.',recovery:'Possible mild redness for a few hours. Immediate return to daily activities.',results:'Progressive tightening over 3–6 months as new collagen forms.',sessions:'3–5',duration:'45–60 min',downtime:'None'},
+  scarl:{cat:'Laser Treatment',title:'Scar Reduction Laser',what:'Fractional CO2 and erbium laser resurfacing that creates controlled micro-injuries in the skin, triggering the body\'s natural healing response to remodel scar tissue.',who:'Patients with acne scars, surgical scars, traumatic scars or stretch marks.',procedure:'Numbing cream applied. Laser creates thousands of microscopic treatment zones. Skin appears frosted immediately after.',recovery:'3–5 days of redness and mild swelling. Skin will peel and heal to reveal improved texture.',results:'30–70% improvement in scar appearance per session, with cumulative improvement.',sessions:'3–5',duration:'45–90 min',downtime:'5–7 days'},
+  acne:{cat:'Skin Treatment',title:'Acne Treatment',what:'A comprehensive approach to active acne combining prescription medical therapy, laser, light-based treatments and advanced clinic protocols for clear, healthy skin.',who:'Teenagers and adults with mild to severe acne, including hormonal, cystic or persistent acne.',procedure:'Initial assessment of skin type and acne grade. Treatment may include topicals, oral medication, laser or peels tailored to severity.',recovery:'Varies by treatment modality. Most patients see significant improvement within 6–8 weeks.',results:'80–90% clearance with a complete programme. Maintenance reduces recurrence.',sessions:'Monthly visits',duration:'30–60 min',downtime:'Minimal'},
+  acnescar:{cat:'Skin & Scar Treatment',title:'Acne Scar Treatment',what:'A multi-modality programme combining fractional laser, microneedling, subcision and chemical reconstruction to address all types of acne scarring.',who:'Patients with ice-pick, boxcar, rolling or mixed acne scars.',procedure:'Each session targets specific scar types. Subcision releases tethered scars; fractional laser resurfacing smooths skin texture.',recovery:'3–7 days of redness and mild swelling post-laser sessions.',results:'Significant improvement in scar depth and texture. Best results after a full course.',sessions:'4–6',duration:'60–90 min',downtime:'3–7 days'},
+  pigm:{cat:'Skin Treatment',title:'Pigmentation Treatment',what:'Targeted medical-grade treatment for all forms of hyperpigmentation including dark spots, sun damage, post-acne marks and uneven skin tone.',who:'Anyone with visible dark patches, uneven complexion or post-inflammatory marks.',procedure:'Combination of topical brightening agents, laser therapy and chemical peels customised to pigmentation type.',recovery:'Minimal. Chemical peels may cause light flaking for 3–5 days.',results:'Progressive lightening over 4–8 weeks of treatment.',sessions:'4–6',duration:'30–45 min',downtime:'0–5 days'},
+  mel:{cat:'Skin Treatment',title:'Melasma Treatment',what:'A structured, evidence-based protocol for melasma combining low-fluence Q-switched laser, medical-grade peels and targeted topical therapy.',who:'Patients with melasma — particularly those with sun-triggered or hormonal pigmentation on the face.',procedure:'Assessment of melasma pattern and depth. Treatment begins with skin preparation followed by laser and peel therapy.',recovery:'Mild redness for 24–48 hours. Sun avoidance is strictly essential.',results:'Significant lightening with sustained maintenance. Requires ongoing sun protection.',sessions:'6–8',duration:'45–60 min',downtime:'1–2 days'},
+  bright:{cat:'Skin Treatment',title:'Skin Brightening',what:'Advanced skin brightening using IV glutathione, vitamin C infusions, brightening lasers and topical protocols for radiant, even-toned skin.',who:'Patients seeking improved skin luminosity, reduced dullness and more even complexion.',procedure:'Combination of IV drip, brightening laser session and topical application in a single visit.',recovery:'None. Immediate glow visible.',results:'Progressive brightening with each session. Skin appears healthier and more luminous.',sessions:'4–8',duration:'45–60 min',downtime:'None'},
+  peel:{cat:'Skin Treatment',title:'Chemical Peel',what:'Medical-grade superficial to medium-depth chemical peels using glycolic, salicylic, TCA or combination acids to renew skin texture, tone and radiance.',who:'Patients with dull skin, uneven tone, mild pigmentation, fine lines or rough texture.',procedure:'Skin is cleansed, degreased and the peel solution is applied for a precise contact time before neutralising.',recovery:'Superficial peels: no downtime. Medium peels: 3–7 days of peeling.',results:'Immediate brightness. Progressive improvement in texture and tone.',sessions:'3–6',duration:'30–45 min',downtime:'0–7 days'},
+  hydra:{cat:'Skin Treatment',title:'HydraFacial',what:'A signature 3-step hydradermabrasion treatment combining cleansing, exfoliation, extraction and deep hydration for instantly luminous, plump skin.',who:'Anyone seeking a refreshing, no-downtime facial with immediate visible results.',procedure:'Cleanse & Peel → Extract & Hydrate → Fuse & Protect using proprietary Vortex technology.',recovery:'None. Skin glows immediately.',results:'Instant radiance, hydration and smoothness. Results visible from the first session.',sessions:'Monthly maintenance',duration:'45–60 min',downtime:'None'},
+  ht:{cat:'Hair Treatment',title:'Hair Transplant (FUE/FUT)',what:'Permanent natural-looking hair restoration using Follicular Unit Extraction (FUE) or Follicular Unit Transplantation (FUT), harvesting your own hair for lifelong results.',who:'Patients with male or female pattern baldness, receding hairlines or hair thinning.',procedure:'Local anaesthesia applied. Follicles harvested from donor area and implanted in precise natural angles and density.',recovery:'Mild swelling for 3–5 days. Transplanted hairs shed at 4–6 weeks before permanent regrowth begins.',results:'Natural, permanent hair growth visible from 6 months. Full results at 12–18 months.',sessions:'Single session',duration:'6–10 hours',downtime:'5–7 days'},
+  prp:{cat:'Hair Treatment',title:'PRP Therapy',what:'Platelet-Rich Plasma extracted from your own blood is injected into the scalp to awaken dormant follicles, strengthen existing hair and significantly reduce hair loss.',who:'Patients with early to moderate hair thinning, diffuse hair loss or as a complement to hair transplant.',procedure:'Blood drawn, centrifuged to concentrate platelets, then injected at precise scalp depths using fine needles.',recovery:'Mild scalp tenderness for 24–48 hours. Normal activities resumed immediately.',results:'Reduced shedding within 3 months. Increased density and thickness by 6 months.',sessions:'4–6 monthly, then quarterly',duration:'45–60 min',downtime:'None'},
+  gfc:{cat:'Hair Treatment',title:'GFC Treatment',what:'Growth Factor Concentrate — a more concentrated, next-generation evolution of PRP, delivering a higher dose of growth factors directly to the scalp for superior hair regrowth.',who:'Patients with hair thinning, alopecia areata or those who want faster results than conventional PRP.',procedure:'Blood processed using specialised GFC kit for maximum growth factor concentration. Injected at scalp level.',recovery:'Minimal scalp redness for 24 hours.',results:'Faster and more pronounced results compared to standard PRP. Noticeable density improvement from 3 months.',sessions:'3–4 monthly',duration:'45–60 min',downtime:'None'},
+  hl:{cat:'Hair Treatment',title:'Hair Loss Treatment',what:'A comprehensive hair loss assessment programme combining trichoscopy, blood panel analysis and a multi-modal treatment plan including medical therapy, laser and regenerative treatments.',who:'Patients experiencing any type of hair loss — androgenetic, alopecia areata, telogen effluvium or nutritional.',procedure:'Detailed scalp and hair analysis followed by a personalised protocol combining the most effective therapies.',recovery:'Depends on treatment chosen.',results:'Stabilisation of hair loss and progressive regrowth with consistent treatment.',sessions:'Ongoing',duration:'Varies',downtime:'Varies'},
+  btx:{cat:'Anti-Ageing',title:'Botox',what:'Precision botulinum toxin injections that temporarily relax overactive facial muscles to soften expression lines, crow\'s feet, forehead lines and frown lines.',who:'Adults seeking a refreshed, rested appearance without surgery.',procedure:'Ultra-fine needles deliver botulinum toxin to targeted muscles. Takes 10–15 minutes.',recovery:'Possible mild redness at injection sites for 1–2 hours. Results appear in 3–7 days.',results:'Natural softening of lines. Results last 4–6 months.',sessions:'Every 4–6 months',duration:'15–20 min',downtime:'None'},
+  fil:{cat:'Anti-Ageing',title:'Dermal Fillers',what:'Hyaluronic acid fillers to restore facial volume, define contours, plump lips and address deep lines — creating natural, youthful results.',who:'Adults with volume loss, nasolabial folds, hollow cheeks, thin lips or jawline definition needs.',procedure:'Numbing cream and/or dental block applied. Filler injected via fine cannula or needle.',recovery:'Mild swelling for 24–48 hours. Possible light bruising.',results:'Immediate volumisation with final results at 2 weeks. Lasts 12–18 months.',sessions:'Every 12–18 months',duration:'30–45 min',downtime:'1–2 days'},
+  thread:{cat:'Anti-Ageing',title:'Thread Lift',what:'PDO (polydioxanone) threads inserted under the skin to lift sagging tissue and stimulate collagen, providing a non-surgical facelift effect.',who:'Patients with mild to moderate facial sagging on the cheeks, jowls, neck or brows.',procedure:'Local anaesthetic applied. Threads inserted via tiny entry points, repositioned and anchored.',recovery:'Mild swelling and tightness for 5–7 days.',results:'Immediate mild lift, with progressive improvement as collagen builds over 3 months. Lasts 12–18 months.',sessions:'Single session',duration:'45–75 min',downtime:'3–7 days'},
+  aal:{cat:'Anti-Ageing & Laser',title:'Anti-Ageing Laser',what:'Fractional laser resurfacing and HIFU (High-Intensity Focused Ultrasound) to treat fine lines, skin laxity and textural irregularities without surgery.',who:'Patients with early to moderate signs of ageing — wrinkles, open pores, dull skin.',procedure:'Topical anaesthetic applied. Fractional laser or HIFU energy delivered to deep skin layers.',recovery:'Laser: 3–5 days mild redness. HIFU: minimal.',results:'Firmer, smoother, more youthful skin visible from 4–8 weeks.',sessions:'1–3',duration:'45–90 min',downtime:'0–5 days'},
+  stk:{cat:'Anti-Ageing',title:'Skin Tightening',what:'RF microneedling and HIFU for deep dermal tightening and collagen stimulation, providing a non-surgical alternative to facelift.',who:'Patients with mild to moderate facial or body skin laxity.',procedure:'Numbing cream applied. RF microneedling creates controlled thermal energy at precise depths.',recovery:'24–48 hours of redness.',results:'Progressive tightening over 3–6 months. Improves with repeat sessions.',sessions:'2–3',duration:'60–90 min',downtime:'1–2 days'},
+  surs:{cat:'Scar Treatment',title:'Surgical Scar Treatment',what:'Combined laser, intralesional steroid injection and silicone therapy for keloids, hypertrophic scars and post-surgical scars.',who:'Patients with raised, thick or discoloured scars from surgery, injury or trauma.',procedure:'Intralesional steroid injected first, followed by laser resurfacing or ablation of the scar.',recovery:'2–5 days mild redness. Scar will continue improving over weeks.',results:'Significant flattening and fading of raised or discoloured scars.',sessions:'3–5',duration:'30–60 min',downtime:'2–5 days'},
+  str:{cat:'Scar Treatment',title:'Stretch Marks Treatment',what:'Combined fractional laser and RF microneedling protocol targeting the dermis to remodel stretch mark tissue and significantly improve its appearance.',who:'Patients with stretch marks from pregnancy, weight changes or rapid growth.',procedure:'Numbing cream applied. Combination treatment delivered to stretch mark area in a single session.',recovery:'Mild redness for 24–48 hours.',results:'30–60% improvement per session in texture and colour.',sessions:'4–6',duration:'30–60 min',downtime:'1–2 days'},
+  burn:{cat:'Scar Treatment',title:'Burn Scar Treatment',what:'Specialised laser resurfacing programme for hypertrophic burn scars, combining ablative and non-ablative laser with reconstructive protocols.',who:'Patients with burn scars ranging from superficial to deep dermal.',procedure:'Comprehensive assessment of scar type. Laser protocol selected based on scar characteristics and skin type.',recovery:'Varies by treatment intensity. 5–10 days for ablative sessions.',results:'Improved texture, colour, pliability and reduced contracture.',sessions:'3–8',duration:'45–90 min',downtime:'5–10 days'}
+};
+
+function openModal(id){
+  const d=modals[id];if(!d)return;
+  document.getElementById('mBadge').textContent=d.cat;
+  document.getElementById('mTitle').textContent=d.title;
+  document.getElementById('mBody').innerHTML=`
+    <div class="modal-section"><h4><i class="fa-solid fa-circle-info"></i> What is this treatment?</h4><p>${d.what}</p></div>
+    <div class="modal-section"><h4><i class="fa-solid fa-user"></i> Who needs this treatment?</h4><p>${d.who}</p></div>
+    <div class="modal-section"><h4><i class="fa-solid fa-list-check"></i> The Procedure</h4><p>${d.procedure}</p></div>
+    <div class="modal-stats">
+      <div class="modal-stat"><strong>${d.sessions}</strong><span>Sessions</span></div>
+      <div class="modal-stat"><strong>${d.duration}</strong><span>Duration</span></div>
+      <div class="modal-stat"><strong>${d.downtime}</strong><span>Downtime</span></div>
+    </div>
+    <div class="modal-section"><h4><i class="fa-solid fa-heart-pulse"></i> Recovery</h4><p>${d.recovery}</p></div>
+    <div class="modal-section"><h4><i class="fa-solid fa-chart-line"></i> Expected Results</h4><p>${d.results}</p></div>
+    <div class="modal-cta">
+      <a href="contact.html" class="btn btn-gold"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+    </div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html> 
