@@ -1268,12 +1268,46 @@ footer {
   .result-card { flex: 0 0 85vw; min-width: 85vw; }
   .testi-card { flex: 0 0 85vw; min-width: 85vw; }
   .cta-btns { flex-direction: column; align-items: center; }
+
+  /* ---- HERO MOBILE FIX ---- */
+  #hero {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 80px;   /* navbar height clearance */
+    padding-bottom: 3rem;
+    align-items: flex-start;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+  .hero-h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-card { display: none; } /* hide doctor card on mobile — shows in About section */
+  .scroll-ind { display: none; }
+
+  /* ---- ABOUT MOBILE FIX ---- */
+  .about-img-main {
+    height: 320px;   /* smaller photo on mobile */
+  }
+  .about-float-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 1rem;
+  }
+  .about-float-card-2 {
+    display: none;  /* hide overlapping badge on mobile */
+  }
 }
 @media (max-width: 480px) {
   .container { padding: 0 1.2rem; }
   .hero-btns { flex-direction: column; }
   .training-grid { grid-template-columns: 1fr; }
   .hero-stats { flex-wrap: wrap; gap: 1rem; }
+  #hero { padding-top: 75px; }
+  .about-img-main { height: 260px; }
 }
 </style>
 </head>
