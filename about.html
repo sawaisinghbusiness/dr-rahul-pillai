@@ -267,6 +267,7 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
   color: var(--text-mid);
 }
+
   /* ── BANNER ── */
   .banner {
     position: relative; height: 520px; margin-top: 72px; overflow: hidden;
@@ -633,6 +634,20 @@ img { max-width: 100%; display: block; }
 </style>
 </head>
 <body>
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="overlay" onclick="closeMobile()"></div>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <span class="mob-close" onclick="closeMobile()"><i class="fas fa-times"></i></span>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Doctor</a>
+  <a href="treatments.html">Treatments</a>
+  <a href="results.html">Results</a>
+  <a href="training.html">Training</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Book Appointment</a>
+</div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
@@ -1087,3 +1102,5 @@ img { max-width: 100%; display: block; }
 </script>
 </body>
 </html>
+
+Displaying index-31.html.
