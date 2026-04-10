@@ -1649,6 +1649,113 @@ img { max-width: 100%; display: block; }
 }
 .form-field textarea { resize: vertical; min-height: 100px; }
 
+/* ===== APPOINTMENT MODAL ===== */
+#cta {
+  display: none !important;
+}
+#contact {
+  display: none;
+}
+.contact-form-source {
+  display: none;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 9999;
+  padding: 1.5rem;
+}
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  position: relative;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  transform: scale(0.9);
+  transition: 0.3s ease;
+}
+.modal.active .modal-content {
+  transform: scale(1);
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 2;
+}
+.success-box {
+  position: relative;
+  text-align: center;
+  padding: 35px 25px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  animation: fadeIn 0.4s ease;
+}
+.success-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #d4aa62, #b8883a);
+  color: #fff;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 35px rgba(184,136,58,0.4);
+}
+.success-box h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.success-box p {
+  font-size: 14px;
+  color: #ddd;
+}
+.success-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.success-close:hover {
+  opacity: 1;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 768px) {
+  .modal {
+    padding: 1rem;
+  }
+  .modal-content {
+    width: 100%;
+  }
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: var(--text-dark);
@@ -1896,9 +2003,7 @@ footer {
   <a href="#about">About Doctor</a>
   <a href="#treatments">Treatments</a>
   <a href="#results">Results</a>
-  <a href="#training">Training</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" class="mob-cta">Book Appointment</a>
+  <a href="#contact" class="mob-cta book-btn">Book Appointment</a>
 </div>
 
 <!-- NAVBAR -->
@@ -1919,9 +2024,7 @@ footer {
         <li><a href="#about">About Doctor</a></li>
         <li><a href="#treatments">Treatments</a></li>
         <li><a href="#results">Results</a></li>
-        <li><a href="#training">Training</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta">Book Appointment</a></li>
+        <li><a href="#contact" class="nav-cta book-btn">Book Appointment</a></li>
       </ul>
       <div class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
@@ -1948,7 +2051,7 @@ footer {
           <h1 class="hero-h1"><span class="hero-highlight">Advanced Skin, Hair</span><br>&amp; <span class="hero-highlight"><em>Laser Treatments</em></span></h1>
           <p class="hero-desc">Providing advanced laser treatments, anti-aging solutions, hair restoration and skin treatments with international experience and thousands of successful results.</p>
           <div class="hero-btns">
-            <a href="#contact" class="btn btn-gold"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+            <a href="#contact" class="btn btn-gold book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a>
             <a href="#results" class="btn btn-outline"><i class="fas fa-images"></i> View Results</a>
             <a href="https://wa.me/919287783999" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
           </div>
@@ -2339,7 +2442,7 @@ footer {
           <div class="cta-btns">
             <a href="tel:+914802703999" class="btn btn-white"><i class="fas fa-phone"></i> Call Now</a>
             <a href="https://wa.me/919287783999" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="#contact" class="btn btn-gold"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+            <a href="#contact" class="btn btn-gold book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a>
           </div>
         </div>
       </div>
@@ -2389,25 +2492,25 @@ Monday - Saturday: 10:00 AM - 7:00 PM<br>Sunday: Closed
           </div>
         </div>
       </div>
-      <div>
-        <div class="contact-form" id="contactForm">
+      <div class="contact-form-source" aria-hidden="true">
+        <form class="contact-form" id="contactFormSource">
           <div class="form-row">
             <div class="form-field">
               <label>Your Name</label>
-              <input type="text" placeholder="Full Name">
+              <input type="text" placeholder="Full Name" required>
             </div>
             <div class="form-field">
               <label>Phone Number</label>
-              <input type="tel" placeholder="+91 9287783999">
+              <input type="tel" placeholder="+91 9287783999" required>
             </div>
           </div>
           <div class="form-field">
             <label>Email Address</label>
-            <input type="email" placeholder="your@email.com">
+            <input type="email" placeholder="your@email.com" required>
           </div>
           <div class="form-field">
             <label>Treatment Interested In</label>
-            <select>
+            <select required>
               <option value="">Select Treatment</option>
               <option>Laser Treatment</option>
               <option>Botox & Fillers</option>
@@ -2420,16 +2523,58 @@ Monday - Saturday: 10:00 AM - 7:00 PM<br>Sunday: Closed
           </div>
           <div class="form-field">
             <label>Message</label>
-            <textarea placeholder="Tell us briefly about your concern or query..."></textarea>
+            <textarea placeholder="Tell us briefly about your concern or query..." required></textarea>
           </div>
-          <button class="btn btn-gold" onclick="submitForm()" style="width:100%;justify-content:center">
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
             <i class="fas fa-paper-plane"></i> Submit Message
           </button>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+<div class="modal" id="appointmentModal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <form class="contact-form">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="form-field">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 9287783999" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-field">
+        <label>Treatment Interested In</label>
+        <select required>
+          <option value="">Select Treatment</option>
+          <option>Laser Treatment</option>
+          <option>Botox & Fillers</option>
+          <option>Acne & Scar Treatment</option>
+          <option>Pigmentation Treatment</option>
+          <option>Hair Transplant</option>
+          <option>Anti Aging Treatment</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Message</label>
+        <textarea placeholder="Tell us briefly about your concern or query..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
+        <i class="fas fa-paper-plane"></i> Submit Message
+      </button>
+    </form>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -2458,8 +2603,6 @@ Monday - Saturday: 10:00 AM - 7:00 PM<br>Sunday: Closed
           <li><a href="#about"><i class="fas fa-chevron-right"></i> About Doctor</a></li>
           <li><a href="#treatments"><i class="fas fa-chevron-right"></i> Treatments</a></li>
           <li><a href="#results"><i class="fas fa-chevron-right"></i> Results</a></li>
-          <li><a href="#training"><i class="fas fa-chevron-right"></i> Training</a></li>
-          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2629,16 +2772,69 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ===== CONTACT FORM =====
-function submitForm() {
-  const btn = document.querySelector('#contactForm button');
-  btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-  btn.style.background = 'linear-gradient(135deg, #48bb78, #38a169)';
+// ===== APPOINTMENT MODAL =====
+const modal = document.getElementById('appointmentModal');
+const openBtns = document.querySelectorAll('.book-btn');
+const closeBtn = document.querySelector('.modal-close');
+const form = document.querySelector('#appointmentModal form');
+
+openBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.add('active');
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  form.style.display = 'none';
+
+  const successBox = document.createElement('div');
+  successBox.className = 'success-box';
+  successBox.innerHTML = '<div class="success-close" id="closeSuccess">✖</div><div class="success-icon">✔</div><h3>Appointment Confirmed</h3><p>Our team will contact you shortly</p>';
+
+  form.parentElement.appendChild(successBox);
+
+  let closed = false;
+
+  function closeSuccess() {
+    if (closed) return;
+    closed = true;
+    successBox.style.opacity = '0';
+    successBox.style.transform = 'translateY(10px)';
+
+    setTimeout(() => {
+      successBox.remove();
+      form.reset();
+      form.style.display = 'block';
+      modal.classList.remove('active');
+    }, 300);
+  }
+
+  successBox.querySelector('#closeSuccess').addEventListener('click', () => {
+    closeSuccess();
+  });
+
   setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Message';
-    btn.style.background = '';
-  }, 3000);
-}
+    closeSuccess();
+  }, 10000);
+});
 
 // ===== SMOOTH RESIZE HANDLER =====
 window.addEventListener('resize', () => {
